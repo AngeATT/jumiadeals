@@ -1,7 +1,7 @@
 #header-pages {
     position: relative;
     background-color: #fafafa;
-    height: 35px;
+    height: 25px;
     text-align: center;
     color: #888888;
     display: flex;
@@ -11,6 +11,11 @@
     border-color: #e7e2e2;
     border-style: solid;
     border-width: 1px;
+}
+.center-elements{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .headerBtn {
@@ -42,9 +47,12 @@
 }
 
 #header-fonctions{
-    border-color: #e7e2e2;
+    border-color:transparent transparent  #e7e2e2 transparent;
     border-style: solid;
-    border-width: 1px;
-    border-top: transparent;
+    border-bottom-width: 1px;
     height: 75px;
+}
+
+.elements{
+    gap: 25px;
 }
