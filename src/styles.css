@@ -9,6 +9,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     align-items: center;
     width: 100vw;
 }
-#conteneur{
+.conteneur{
     width: 990px;
 }

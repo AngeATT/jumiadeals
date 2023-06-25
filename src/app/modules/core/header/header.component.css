@@ -56,3 +56,26 @@
 .elements{
     gap: 25px;
 }
+
+.header-link{
+    text-decoration: inherit;
+    color: #2B88DE;
+}
+.header-link:hover{
+    color: #062a4c;
+}
+
+.btn-annonce{
+    height: 45px;
+    width: 240px;
+    background-color: #FEE433;
+    color: #1d1d1d;
+    border-color: yellow;
+    border-radius: 5px;
+    size: 25px;
+    font-size: large;
+    font-weight: bold;
+}
+.btn-annonce:hover{
+    background-color: #ecd32e;
+}
