@@ -7,17 +7,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './modules/core/header/header.component';
 import { FooterComponent } from './modules/core/footer/footer.component';
 import { HeaderModule } from './modules/core/header/header.module';
+import {MatIconModule} from '@angular/material/icon';
+import { AuthComponent } from './modules/core/auth/auth.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent
+    FooterComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HeaderModule
+    HeaderModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

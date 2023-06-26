@@ -58,8 +58,13 @@
 }
 
 .header-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     text-decoration: inherit;
     color: #2B88DE;
+    vertical-align: middle;
 }
 .header-link:hover{
     color: #062a4c;
@@ -78,4 +83,14 @@
 }
 .btn-annonce:hover{
     background-color: #ecd32e;
+}
+
+#compteDiag{
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    border-width: 2px;
+    border-color: #1d1d1d;
+    background-color: #2B88DE;
+    top: 20px;
 }
