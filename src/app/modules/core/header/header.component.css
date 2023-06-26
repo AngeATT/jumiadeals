@@ -12,10 +12,13 @@
     border-style: solid;
     border-width: 1px;
 }
-.center-elements{
+
+.center-elements {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-shrink: 0;
+    flex-grow: 0;
 }
 
 .headerBtn {
@@ -37,7 +40,8 @@
 
 #triangle {
     width: 1px;
-    height: 1px;border-left: 20px solid transparent;
+    height: 1px;
+    border-left: 20px solid transparent;
     border-right: 20px solid transparent;
     border-top: 20px solid #fafafa;
     position: absolute;
@@ -46,18 +50,18 @@
     transform: translateX(-50%);
 }
 
-#header-fonctions{
-    border-color:transparent transparent  #e7e2e2 transparent;
+#header-fonctions {
+    border-color: transparent transparent #e7e2e2 transparent;
     border-style: solid;
     border-bottom-width: 1px;
     height: 75px;
 }
 
-.elements{
+.elements {
     gap: 25px;
 }
 
-.header-link{
+.header-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,11 +70,12 @@
     color: #2B88DE;
     vertical-align: middle;
 }
-.header-link:hover{
+
+.header-link:hover {
     color: #062a4c;
 }
 
-.btn-annonce{
+.btn-annonce {
     height: 45px;
     width: 240px;
     background-color: #FEE433;
@@ -81,16 +86,51 @@
     font-size: large;
     font-weight: bold;
 }
-.btn-annonce:hover{
+
+.btn-annonce:hover {
     background-color: #ecd32e;
 }
 
-#compteDiag{
-    width: 200px;
-    height: 250px;
-    position: absolute;
+#compteDiag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 175px;
+    height: 180px;
     border-width: 2px;
-    border-color: #1d1d1d;
-    background-color: #2B88DE;
-    top: 20px;
+    border-color: #f1f0f0;
+    background-color: #ffffff;
+    border-style: solid;
+    position: fixed;
+    top: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+
+#link-compteDiag {
+    padding: 0px;
+    list-style: none;
+    line-height: 1.5rem;
+    color: #2b85d9;
+}
+#btnDiag{
+    border-color: #2B88DE;
+    width: 140px;
+    height: 100px;
+    font-size: 17px;
+    color: #1d67ac;
+    border-radius: 5px;
+}
+#compte{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    justify-content: center;
+    align-items: center;
+}
+#compteEtDiag{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
