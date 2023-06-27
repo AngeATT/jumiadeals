@@ -26,15 +26,16 @@
             <div class="center-elements elements">
                 <div id="compte">
                     <div id="compteEtDiag">
-                        <a class="header-link" href=""><mat-icon>account_circle</mat-icon>
+                        <a id="compteLink" class="header-link" href="" (mouseover)="showDiag()"
+                        (mouseout)="hideDiag()"><mat-icon>account_circle</mat-icon>
                             Mon Compte
                         </a>
                     </div>
-                    <div id="compteDiag">
+                    <div [id]="diag ? 'compteDiag' : 'hide'" (mouseover)="showDiag()" (mouseout)="hideDiag()">
                         <button id="btnDiag">Se connecter</button>
                         <ul id="link-compteDiag">
                             <li>Publier une annonce</li>
-                            <li>Mes favors</li>
+                            <li>Mes favoris</li>
                             <li>Créer un compte</li>
                             <hr>
                             <li>Mot de passe oublié ?</li>

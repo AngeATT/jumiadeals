@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { HeaderComponent } from './header.component';
 import { MaterialFeatures } from './material-features.component';
 import { MatIconModule } from '@angular/material/icon';
@@ -8,4 +8,6 @@ import { MatIconModule } from '@angular/material/icon';
     exports: [HeaderComponent],
     imports: [MaterialFeatures,MatIconModule]
 })
-export class HeaderModule { }
+export class HeaderModule {
+    
+ }
