@@ -25,9 +25,8 @@
             </div>
             <div class="center-elements elements">
                 <div id="compte">
-                    <div id="compteEtDiag">
-                        <a id="compteLink" class="header-link" href="" (mouseover)="showDiag()"
-                        (mouseout)="hideDiag()"><mat-icon>account_circle</mat-icon>
+                    <div id="compteEtDiag" (mouseover)="showDiag()" (mouseout)="hideDiag()">
+                        <a id="compteLink" class="header-link" href="" ><mat-icon>account_circle</mat-icon>
                             Mon Compte
                         </a>
                     </div>
@@ -36,7 +35,9 @@
                         <ul id="link-compteDiag">
                             <li>Publier une annonce</li>
                             <li>Mes favoris</li>
-                            <li>Créer un compte</li>
+                            <li><a class="link" href="/auth">
+                                    Créer un compte
+                                </a></li>
                             <hr>
                             <li>Mot de passe oublié ?</li>
                         </ul>
