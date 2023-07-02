@@ -1,14 +1,24 @@
 @import '~material-icons/iconfont/material-icons.css';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%; 
+ }
+body { 
+    margin: 0;
+     font-family: 1.4em/1.571em "Helvetica Neue",Roboto,Helvetica,Arial,sans-serif;
+     min-width: 970px;
+     }
 
 .body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font: "Helvetica Neue",Roboto,Helvetica,Arial,sans-serif;
 }
 .conteneur{
-    width: 990px;
+    width: 970px;
     flex-shrink: 0;
+}
+
+.boxSize{
+    min-width: 970px;
 }

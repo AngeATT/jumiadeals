@@ -1,55 +1,54 @@
-<div id="header-pages">
-    <a href="" class="headerBtn" id="jumiaHeaderBtn">JUMIA
-    </a>|
-    <a href="" class="headerBtn" id="dealsHeaderBtn">DEALS</a>
-    | <a href="" class="headerBtn" id="foodHeaderBtn">FOOD</a>
-    <div id="triangle">
-    </div>
-</div>
-<div class="body">
-    <div class="conteneur">
-        <div class="center-elements" id="header-fonctions">
-            <div class=" center-elements elements">
-                <a class="header-link" href="">
-                    <img src=".\assets\deals.PNG" href="">
-                </a>
-                <a class="header-link" href="">
-                    Toutes les annonces
-                </a>
-                <a class="header-link" href="">
-                    Boutiques
-                </a>
-                <a class="header-link" href="">
-                    Aide
-                </a>
-            </div>
-            <div class="center-elements elements">
-                <div id="compte">
-                    <div id="compteEtDiag" (mouseover)="showDiag()" (mouseout)="hideDiag()">
-                        <a id="compteLink" class="header-link" href="" ><mat-icon>account_circle</mat-icon>
-                            Mon Compte
-                        </a>
-                    </div>
-                    <div [id]="diag ? 'compteDiag' : 'hide'" (mouseover)="showDiag()" (mouseout)="hideDiag()">
-                        <button id="btnDiag">Se connecter</button>
-                        <ul id="link-compteDiag">
-                            <li>Publier une annonce</li>
-                            <li>Mes favoris</li>
-                            <li><a class="link" href="/auth">
-                                    Créer un compte
-                                </a></li>
-                            <hr>
-                            <li>Mot de passe oublié ?</li>
-                        </ul>
-                    </div>
-
-                </div>
-
-                <button class="btn-annonce">
-                    Publiez Votre annonce
-                </button>
-            </div>
+<div class="header-conteneur">
+    <div id="header-pages">
+        <a href="" class="headerBtn" id="jumiaHeaderBtn">JUMIA
+        </a>|
+        <a href="" class="headerBtn" id="dealsHeaderBtn">DEALS</a>
+        | <a href="" class="headerBtn" id="foodHeaderBtn">FOOD</a>
+        <div id="triangle">
         </div>
     </div>
+        <div class="conteneur-links">
+            <div class="center-elements" id="header-fonctions">
+                <div class=" center-elements elements">
+                    <a class="header-link" href="">
+                        <img src=".\assets\deals.PNG" href="">
+                    </a>
+                    <a class="header-link" href="">
+                        Toutes les annonces
+                    </a>
+                    <a class="header-link" href="">
+                        Boutiques
+                    </a>
+                    <a class="header-link" href="">
+                        Aide
+                    </a>
+                </div>
+                <div class="center-elements elements">
+                    <div id="compte">
+                        <div id="compteEtDiag" (mouseover)="showDiag()" (mouseout)="hideDiag()">
+                            <a id="compteLink" class="header-link" href=""><mat-icon>account_circle</mat-icon>
+                                Mon Compte
+                            </a>
+                        </div>
+                        <div [id]="diag ? 'compteDiag' : 'hide'" (mouseover)="showDiag()" (mouseout)="hideDiag()">
+                            <button id="btnDiag">Se connecter</button>
+                            <ul id="link-compteDiag">
+                                <li>Publier une annonce</li>
+                                <li>Mes favoris</li>
+                                <li><a class="link" href="/auth">
+                                        Créer un compte
+                                    </a></li>
+                                <hr>
+                                <li>Mot de passe oublié ?</li>
+                            </ul>
+                        </div>
 
+                    </div>
+
+                    <button class="btn-annonce">
+                        Publiez Votre annonce
+                    </button>
+                </div>
+            </div>
+        </div>
 </div>

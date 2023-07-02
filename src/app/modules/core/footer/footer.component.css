@@ -6,6 +6,8 @@
     border-width: 1px;
     background-color: #DDDDDD;
     margin: 0;
+    min-width: 970px;
+    font-size: 100%;
 }
 
 .section{
@@ -18,7 +20,7 @@
 
 .footer-containeur{
     width: 990px;
-    font-size: small;
+    font-size: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
