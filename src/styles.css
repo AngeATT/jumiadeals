@@ -1,7 +1,9 @@
 @import '~material-icons/iconfont/material-icons.css';
 
-html, body { height: 100%; 
+html, body { height: 100%;
+    min-width: 990px;
  }
+ 
 body { 
     margin: 0;
      font-family: 1.4em/1.571em "Helvetica Neue",Roboto,Helvetica,Arial,sans-serif;
