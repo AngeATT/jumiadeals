@@ -96,7 +96,11 @@ hr {
 }
 
 .errorStyle{
+    border-style: solid;
     border-color: red;
     border-width: 1px;
+    border-radius: 2px;
+}
+.errorMsg{
     color: red;
 }

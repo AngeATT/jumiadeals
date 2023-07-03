@@ -12,18 +12,24 @@
         <li></li>
     </ul>
     <div id="box-inscription">
-        <form [formGroup] = "utilisateurForm" (ngSubmit) = "authenticate()">
+        <form [formGroup]="utilisateurForm" (ngSubmit)="authenticate()">
             <ul id="form-connexion">
                 <li>
                     <h2>Se connecter</h2>
                 </li>
-                <li><input class="input-auth" type="email" placeholder="Votre adresse email" formControlName = "email"
-                >
+                <li>
+                    <input class="input-auth" [class.errorStyle]="emailValid()" type="email"
+                        placeholder="Votre adresse email" formControlName="email">
+                        <div *ngIf= "emailValid()"
+                        class="errorMsg" >Email Invalide</div>
                 </li>
                 <li>
-                    <input class="input-auth" placeholder="Votre Mot de passe" type="password"formControlName = "password">
+                    <input class="input-auth" placeholder="Votre Mot de passe" type="password"
+                        formControlName="password">
+                        <div class="errorMsg" *ngIf= "passwordValid()" >Entrez un mot de passe d'au moins 4 caractères</div>
                 </li>
                 <input class="input-auth" id="submit-auth" type="submit" value="Se connecter">
+                <div *ngIf="" class="errorMsg">Email ou mot de passe erroné</div>
             </ul>
         </form>
         <hr>
