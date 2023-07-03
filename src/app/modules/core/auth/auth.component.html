@@ -4,32 +4,32 @@
             <p><b>Un</b> compte. <b>Tous</b> les services</p>
         </li>
         <li>Désormais, avec un seul compte, vous pouvez vous connecter à tous ces services :</li>
-        <li><p>
-            <img src="../../../../assets/img-jumia&Food.PNG" alt=""></p></li>
+        <li>
+            <p>
+                <img src="../../../../assets/img-jumia&Food.PNG" alt="">
+            </p>
+        </li>
         <li></li>
     </ul>
     <div id="box-inscription">
-        <form action="">
+        <form [formGroup] = "utilisateurForm" (ngSubmit) = "authenticate()">
             <ul id="form-connexion">
-                <li><h2>Se connecter</h2></li>
-                <li><input class="input-auth" type="email" placeholder="Votre adresse email"></li>
                 <li>
-                    <input class="input-auth" placeholder ="Votre Mot de passe" type="password">
+                    <h2>Se connecter</h2>
                 </li>
-                <input 
-                class="input-auth"
-                id="submit-auth" type="submit"
-                value="Se connecter"
+                <li><input class="input-auth" type="email" placeholder="Votre adresse email" formControlName = "email"
                 >
+                </li>
+                <li>
+                    <input class="input-auth" placeholder="Votre Mot de passe" type="password"formControlName = "password">
+                </li>
+                <input class="input-auth" id="submit-auth" type="submit" value="Se connecter">
             </ul>
         </form>
         <hr>
-        <div style="margin-top: 25px;">
-            <input 
-            id="facebook-link"
-            class="input-auth" type="submit"
-            value="Se connecter Via Facebook"
-            ></div>
+        <div style="margin-top: 15px;">
+            <input id="facebook-link" class="input-auth" type="submit" value="Se connecter Via Facebook">
+        </div>
     </div>
-    
+
 </div>

@@ -94,3 +94,9 @@ hr {
     transform: translateY(-3px);
     box-shadow: 0.25em 0.25em 0.25em 0em #3B569D;
 }
+
+.errorStyle{
+    border-color: red;
+    border-width: 1px;
+    color: red;
+}
