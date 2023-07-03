@@ -49,7 +49,7 @@ export class AuthComponent {
       return false;
     }
   }
-
+  
   passwordValid() : boolean | undefined{
     if (this.isSubmited){
       return !this.utilisateurForm.get('password')?.valid;
@@ -57,4 +57,5 @@ export class AuthComponent {
       return false;
     }
   }
+
 }
