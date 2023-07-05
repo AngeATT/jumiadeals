@@ -31,11 +31,12 @@
                             </a>
                         </div>
                         <div [id]="diag ? 'compteDiag' : 'hide'" (mouseover)="showDiag()" (mouseout)="hideDiag()">
-                            <button id="btnDiag">Se connecter</button>
+                                <button id="btnDiag">
+                                    <a id="lien-sancss" href="/auth">Se connecter</a></button>
                             <ul id="link-compteDiag">
                                 <li>Publier une annonce</li>
                                 <li>Mes favoris</li>
-                                <li><a class="link" href="/auth">
+                                <li><a class="link" href="/register">
                                         Créer un compte
                                     </a></li>
                                 <hr>

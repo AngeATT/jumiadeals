@@ -37,11 +37,14 @@
 }
 
 .input-auth {
+    border: solid;
+    border-width: 1px;
+    border-color: #DDDD;
     width: 380px;
     height: 40px;
-    border-radius: 1px;
+    border-radius: 3px;
     padding-left: 10px;
-    font-size: medium;
+    font-size: smaller;
     transition: 0.3s;
 }
 

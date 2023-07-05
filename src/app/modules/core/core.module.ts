@@ -8,11 +8,14 @@ import { AuthComponent } from "./auth/auth.component";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { RestDataSource } from "./datasources/spring.rest.source";
+import { RegistrationComponent } from './registration/registration.component';
+import { CoreRoutingModule } from "./core-routing.module";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 
 @NgModule({
-    declarations:[FooterComponent,HeaderComponent,AuthComponent],
-    exports:[FooterComponent,HeaderComponent,AuthComponent],
-    imports:[CommonModule, MaterialFeatures, MatIconModule, ReactiveFormsModule],
+    declarations:[FooterComponent,HeaderComponent,AuthComponent, RegistrationComponent],
+    exports:[HeaderComponent,FooterComponent,AuthComponent,CoreRoutingModule],
+    imports:[CommonModule, MaterialFeatures, MatIconModule, ReactiveFormsModule,HttpClientModule],
     providers:[AuthService,RestDataSource]
 })
 export class CoreModule{}
