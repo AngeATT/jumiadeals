@@ -6,7 +6,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html',
-  styleUrls: ['../shared/common.css.css']
+  styleUrls: ['../shared/compteCss.css']
 })
 export class AuthComponent {
   isLoginCorrect : undefined | boolean;
