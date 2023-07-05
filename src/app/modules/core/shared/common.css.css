@@ -1,0 +1,149 @@
+.conteneur-auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.paragraphes {
+    list-style: none;
+    line-height: 1.57em;
+    text-align: center;
+}
+
+.box-formulaire {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #DDDD;
+    box-shadow: 0 0 1em#DDDD;
+}
+#box-connexion{
+    height: 400px;
+    width: 620px;
+}
+#box-inscription{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    height: 800px;
+    width: 650px;
+}
+
+#form-connexion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.input-auth {
+    border: solid;
+    border-width: 1px;
+    border-color: #DDDD;
+    width: 380px;
+    height: 40px;
+    border-radius: 3px;
+    padding-left: 10px;
+    font-size: smaller;
+    transition: 0.3s;
+}
+
+.input-auth::placeholder {
+    color: rgb(0, 0, 0);
+    opacity: 1;
+}
+
+#submit-auth {
+    background-color: #26A715;
+    border-radius: 3px;
+    border: solid 1px #26A715;
+    border-width: 0;
+    color: white;
+    font-size: medium;
+}
+
+#submit-auth:hover {
+    background-color: #287d1d;
+    cursor: pointer;
+}
+
+.input-auth:focus {
+    outline: none;
+}
+
+.input-auth:focus::placeholder {
+    color: transparent;
+}
+
+hr {
+    border: 0;
+    display: block;
+    width: 96%;
+    background-color: #DDDD;
+    height: 1px;
+}
+
+#facebook-link {
+    background-color: #3B569D;
+    color: white;
+    font-size: larger;
+    border-radius: 3px;
+    border-color: #3B569D;
+}
+
+#facebook-link:hover {
+    cursor: pointer;
+    color: aliceblue;
+    transform: translateY(-3px);
+    box-shadow: 0.25em 0.25em 0.25em 0em #3B569D;
+}
+
+.errorStyle{
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+    border-radius: 2px;
+}
+.errorMsg{
+    color: red;
+}
+
+h2{
+    text-align: center;
+}
+
+#whatsapp-span{
+    display: flex;
+    align-self: flex-start;
+}
+
+#checkbox{
+    width: 20px;
+    height: 20px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #DDDD;
+}
+#checkbox:checked{
+    background-color: white;
+}
+#div-connexion{
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 0.8em;
+}
+#div-connexion>a{
+    text-decoration: inherit;
+    color: rgb(26, 151, 223);
+}
+#div-connexion>a:hover{
+    color: rgb(14, 83, 123);
+}

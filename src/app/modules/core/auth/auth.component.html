@@ -1,4 +1,4 @@
-<div class="conteneur-auth">
+
     <ul class="paragraphes">
         <li>
             <p><b>Un</b> compte. <b>Tous</b> les services</p>
@@ -11,7 +11,7 @@
         </li>
         <li></li>
     </ul>
-    <div id="box-inscription">
+    <div class="box-formulaire" id="box-connexion">
         <form [formGroup]="utilisateurForm" (ngSubmit)="authenticate()">
             <ul id="form-connexion">
                 <li>
@@ -37,5 +37,3 @@
             <input id="facebook-link" class="input-auth" type="submit" value="Se connecter Via Facebook">
         </div>
     </div>
-
-</div>
