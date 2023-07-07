@@ -1,0 +1,31 @@
+<div>
+
+    <div>
+        <H2>Site de Petites Annonces en Côte D'ivoire</H2>
+        <h3>Choississez votre ville</h3>
+        <div *ngFor="let ville of villes; let i = index ">
+            <ul>
+                <li *ngIf="i<3">{{ville}}</li>
+            </ul>
+            <ul>
+                <li *ngIf="i>=3 && i < 6">{{ville}}</li>
+            </ul>
+        </div>
+        <button><a href="">Publiez votre annonce en Côte d'ivoire</a></button>
+    </div>
+    <div>
+        <ul>
+            <li>Vendez tout sur Jumia Deals
+            <li>Des centaines d'acheterus tous les jours</li>
+            <li>Ajoutez des images pour vendre plus vite !</li>
+            <li><a href="">Voir toutes les annonces en Côte d’Ivoire</a></li>
+        </ul>
+    </div>
+    <div>
+        <div><p>Achetez et vendez en toute sécurité !</p>
+        <p>Chaque annonce est vérifiée par notre équipe. <a href="">Lisez nos conseils</a> pour faire de bonnes affaires
+            en toute sécurité. </p></div>
+        <div><p>Jumia deals sur facebook</p>
+        <button>like</button></div>
+    </div>
+</div>
