@@ -9,6 +9,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['../shared/compteCss.css']
 })
 export class AuthComponent {
+  email?: string;
+  password?: string;
+
   isLoginCorrect : undefined | boolean;
   isSubmited : boolean = false;
   isEmailValid: boolean | undefined = true;
@@ -20,27 +23,25 @@ export class AuthComponent {
     password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(12)]]
   });
 
-
-
-  constructor(private router: Router, auth: AuthService, private fb: FormBuilder) {
+  constructor(private router: Router, public auth: AuthService, private fb: FormBuilder) {
   }
   authenticate(): void {
     this.isSubmited = true;
-    if (!this.utilisateurForm.valid) {
-      this.isEmailValid = this.emailValid()
-      this.isPasswordValid = this.passwordValid();
-      this.isLoginCorrect = undefined;
-    }else{
-      //logic du back si le gar se connecte good on le renvoie sur 
-      this.router.navigateByUrl("/");
-      if (true){
+    if (this.utilisateurForm.valid) {
+      if (this.auth.authenticate(this.email,this.password)){
+        // this.router.navigateByUrl("/");
         this.isLoginCorrect = true;
       }else{
         this.isLoginCorrect = false;
       }
+    }else{
+      this.isEmailValid = this.emailValid()
+      this.isPasswordValid = this.passwordValid();
+      this.isLoginCorrect = undefined;
     }
     console.log(this.utilisateurForm.get('email')?.valid);
   }
+
 
   emailValid() : boolean | undefined{
     if (this.isSubmited){

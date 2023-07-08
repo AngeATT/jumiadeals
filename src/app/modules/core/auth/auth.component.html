@@ -18,14 +18,19 @@
                     <h2>Se connecter</h2>
                 </li>
                 <li>
-                    <input class="input-auth" [class.errorStyle]="emailValid()" type="email"
-                        placeholder="Votre adresse email" formControlName="email">
+                    <input name="email"
+                     class="input-auth" [class.errorStyle]="emailValid()" type="email"
+                        placeholder="Votre adresse email" formControlName="email"
+                        [(ngModel)] = "email">
                         <div *ngIf= "emailValid()"
                         class="errorMsg" >Email Invalide</div>
                 </li>
                 <li>
-                    <input class="input-auth" placeholder="Votre Mot de passe" type="password"
-                        formControlName="password">
+                    <input
+                        name = "password"
+                     class="input-auth" placeholder="Votre Mot de passe" type="password"
+                        formControlName="password"
+                        [(ngModel)] = "password">
                         <div class="errorMsg" *ngIf= "passwordValid()" >Entrez un mot de passe d'au moins 4 caractères</div>
                 </li>
                 <input class="input-auth" id="submit-auth" type="submit" value="Se connecter">

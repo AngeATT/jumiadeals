@@ -107,3 +107,6 @@ hr {
 .errorMsg{
     color: red;
 }
+h2{
+    font-weight: 400;
+}

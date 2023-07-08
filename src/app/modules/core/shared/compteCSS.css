@@ -23,7 +23,7 @@
     box-shadow: 0 0 1em#DDDD;
 }
 #box-connexion{
-    height: 400px;
+    height: 500px;
     width: 620px;
 }
 #box-inscription{
@@ -118,6 +118,7 @@ hr {
 
 h2{
     text-align: center;
+    font-weight: 400;
 }
 
 #whatsapp-span{
@@ -147,3 +148,4 @@ h2{
 #div-connexion>a:hover{
     color: rgb(14, 83, 123);
 }
+
