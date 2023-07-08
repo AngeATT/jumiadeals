@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, map } from "rxjs";
+import { RegistrationForm } from "../registration/registationForm";
 
 const PROTOCOL = "http";
 const PORT = 8080;
@@ -14,9 +15,6 @@ export class RestDataSource{
     }
 
     authenticate(email?: string, password?: string): Observable<boolean>{
-        this.http.post<any>('http://localhost:8080/login',{email : email, password: password}).subscribe(
-            data => console.log(data)
-        );
         return this.http.post<any>(this.baseUrl + "login", {
             email: `${email}`,
             password: `${password}`
@@ -25,6 +23,15 @@ export class RestDataSource{
             return reponse.sucess;
         }));
      }
+
+     register(userInformations : RegistrationForm){
+        return this.http.post<any>(this.baseUrl+"register", JSON.stringify(userInformations)).pipe(
+            map(response => {
+                return response.sucess;
+            })
+        )
+     };
+
 
 
 }
