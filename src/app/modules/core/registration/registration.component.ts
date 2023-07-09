@@ -11,61 +11,37 @@ import { RegistrationForm } from './registationForm';
 export class RegistrationComponent {
   
   numeros: Map<String, Boolean> = new Map<string, boolean>();
-  isFormSubmit = false;
   userInformations? : RegistrationForm;
-  isWhatsapp = false;
 
   registationForm =  this.formBuilder.group({
-    nom : ['', Validators.name],
-    email: ['', Validators.email],
-    numero :['', Validators.pattern(/[0-9]{10}/)],
-    password: ['', Validators.minLength(3)]
+    nom : ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z\s]+/)]],
+    email: ['', [Validators.required, Validators.pattern(/\w+@\w+.\w+/), Validators.maxLength(30)]],
+    numero :['', Validators.pattern(/^[0-9][1-9][0-9]{8}/)],
+    password: ['', Validators.minLength(3)],
+    isWhatsapp : [false]
   })
 
-  constructor(public authService: AuthService, private formBuilder : FormBuilder){
-    
-  }
+  constructor(public authService: AuthService, private formBuilder : FormBuilder){}
 
-  inscription(){
-    this.isFormSubmit = true;
+  enregistrementUtilisateur(){
     if (this.registationForm.valid){
-      this.numeros?.set(this.registationForm.get('password')?.value!, this.isWhatsapp);
+      this.numeros?.set(this.registationForm.get('password')?.value!, this.registationForm.get('isWhatsapp')?.value!);
       this.userInformations = new RegistrationForm(
-        this.registationForm.get('nom')?.value!,
-        this.registationForm.get('email')?.value!,
+        this.nomControl!.get('value')!.value!,
+        this.emailControl?.value!,
         this.numeros,
-        this.registationForm.get('password')?.value!
+        this.passwordControl?.value!
       )
       this.authService.enregistrer(this.userInformations);
     }
   }
 
-  isNameValid(): boolean{
-    if (!this.isFormSubmit){
-      return true;
-    }else{
-      return this.registationForm.get('nom')?.valid!;
-    }
-  }
-  isEmailValid(): boolean{
-    if (!this.isFormSubmit){
-      return true;
-    }else{
-      return this.registationForm.get('email')?.valid!;
-    }
-  }
-  isPasswordValid(): boolean{
-    if (!this.isFormSubmit){
-      return true;
-    }else{
-      return this.registationForm.get('password')?.valid!;
-    }
-  }
-  isNumeroValid(): boolean{
-    if (!this.isFormSubmit){
-      return true;
-    }else{
-      return this.registationForm.get('numero')?.valid!;
-    }
-  }
+  get nomControl(){return this.registationForm.get('nom')}
+
+  get emailControl() { return this.registationForm.get('email')}
+
+  get numeroControl() { return this.registationForm.get('numero')}
+
+  get passwordControl() {return this.registationForm.get('password')}
+
 }

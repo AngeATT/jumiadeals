@@ -116,6 +116,7 @@ hr {
     color: red;
 }
 
+
 h2{
     text-align: center;
     font-weight: 400;
@@ -124,6 +125,7 @@ h2{
 #whatsapp-span{
     display: flex;
     align-self: flex-start;
+    font-size: 1em;
 }
 
 #checkbox{

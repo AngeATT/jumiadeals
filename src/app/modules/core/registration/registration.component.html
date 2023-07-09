@@ -13,21 +13,33 @@
 </ul>
 <div id="box-inscription" class="box-formulaire">
     <ul id="form-connexion">
-        <li><h2>Pas encore membre ? <br>Inscrivez-vous gratuitement !</h2></li>
+        <li>
+            <h2>Pas encore membre ? <br>Inscrivez-vous gratuitement !</h2>
+        </li>
         <li><span style="color: rgb(26, 151, 223);">En 30 secondes</span> avec une adresse mail</li>
-        <form [formGroup] = "registationForm" >
+        <form [formGroup]="registationForm" (ngSubmit)="enregistrementUtilisateur()">
             <ul id="form-connexion">
-                <li><input formControlName="nom" placeholder="Nom" class="input-auth" type="text"
-                [class.errorStyle]="isNameValid()"></li>
-                <li><input formControlName="email" placeholder="Email :"  class="input-auth" type="email"
-                [class.errorStyle]="isEmailValid()"></li>
+                <li><input formControlName="nom" placeholder="Nom complet" class="input-auth" type="text"
+                        name="fullname" [class.errorStyle]="nomControl!.touched && nomControl!.invalid">
+                    <div *ngIf="nomControl!.touched && nomControl!.invalid" class="errorMsg"> Noms & prénoms invalide veuillez vérifier
+                        votre saisie </div>
+                </li>
+                <li><input formControlName="email" placeholder="Email :" class="input-auth" type="email" name="email"
+                        [class.errorStyle]="emailControl!.touched && emailControl!.invalid">
+                    <div *ngIf="emailControl!.touched && emailControl!.invalid" class="errorMsg"> Email invalide
+                    </div>
+                </li>
                 <li><input formControlName="numero" placeholder="Numero de téléphone principal" class="input-auth"
-                [class.errorStyle]="isNumeroValid()"></li>
-                <div id="whatsapp-span"><input type="checkbox" id="checkbox"
-                [(ngModel)]="isWhatsapp">Fonctionne avec Whatsapp</div>
-                    
-                <li><input formControlName="password" class="input-auth" type="password" placeholder="Mot de passe"></li>
-                <input onclick="inscription" class="input-auth" id="submit-auth" type="button" value="S'inscrire gratuitement">
+                        name="numero" [class.errorStyle]="numeroControl!.touched && numeroControl!.invalid">
+                    <div *ngIf="numeroControl!.touched && numeroControl!.invalid" class="errorMsg"> Numéro invalide
+                    </div>
+                </li>
+                <div id="whatsapp-span"><input type="checkbox" id="checkbox" formControlName="isWhatsapp">Fonctionne
+                    avec Whatsapp</div>
+
+                <li><input formControlName="password" class="input-auth" type="password" placeholder="Mot de passe"
+                        name="password"></li>
+                <input class="input-auth" id="submit-auth" type="submit" value="S'inscrire gratuitement">
             </ul>
         </form>
         <hr>
