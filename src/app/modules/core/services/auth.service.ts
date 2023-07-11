@@ -1,3 +1,6 @@
+/**
+ * Service qui va gérer l'authentification à travers l'envoie de requete de connexion, deconnexion et inscription pour communiquer avec le back-end
+ */
 import { Injectable } from "@angular/core";
 import { RestDataSource } from "../datasources/spring.rest.source";
 import { Observable } from "rxjs";

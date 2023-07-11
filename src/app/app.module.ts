@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 
 import { CoreModule } from './modules/core/core.module';
+import { httpInterceptorProviders } from './helpers/http.interceptor';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { CoreModule } from './modules/core/core.module';
     CoreModule,
     MatIconModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [httpInterceptorProviders],
+  bootstrap: [AppComponent,]
 })
 export class AppModule { }
