@@ -3,19 +3,15 @@ import { Injectable } from "@angular/core";
 import { Observable, map } from "rxjs";
 import { RegistrationForm } from "../registration/registationForm";
 
-const PROTOCOL = "http";
-const PORT = 8080;
+const baseUrl = `localhost://${location.hostname}:8080/api/auth/`
 @Injectable()
 export class RestDataSource{
-    baseUrl: string;
     auth_token?: string;
 
-    constructor(private http: HttpClient){
-        this.baseUrl = `${PROTOCOL}://${location.hostname}:${PORT}/`
-    }
+    constructor(private http: HttpClient){ }
 
     authenticate(email?: string, password?: string): Observable<boolean>{
-        return this.http.post<any>(this.baseUrl + "login", {
+        return this.http.post<any>(baseUrl + "login", {
             email: `${email}`,
             password: `${password}`
         }).pipe(map(reponse => {
@@ -25,7 +21,7 @@ export class RestDataSource{
      }
 
      register(userInformations : RegistrationForm){
-        return this.http.post<any>(this.baseUrl+"register", JSON.stringify(userInformations)).pipe(
+        return this.http.post<any>(baseUrl+"register", JSON.stringify(userInformations)).pipe(
             map(response => {
                 return response.sucess;
             })
