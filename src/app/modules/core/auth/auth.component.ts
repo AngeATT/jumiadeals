@@ -28,7 +28,7 @@ export class AuthComponent {
   authenticate(): void {
     this.isSubmited = true;
     if (this.utilisateurForm.valid) {
-      if (this.auth.authenticate(this.email,this.password)){
+      if (this.auth.login(this.email,this.password)){
         // this.router.navigateByUrl("/");
         this.isLoginCorrect = true;
       }else{
