@@ -6,12 +6,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  public diag = false;
   
-  hideDiag():void{
-    this.diag = false;
-  }
-  showDiag(){
-    this.diag = true;
-  }
 }

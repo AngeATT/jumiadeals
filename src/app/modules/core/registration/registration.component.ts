@@ -32,7 +32,11 @@ export class RegistrationComponent {
         this.numeros,
         this.passwordControl?.value!
       )
-      this.authService.enregistrer(this.userInformations);
+      if (this.authService.register(this.userInformations)){
+          
+      }else{
+
+      }
     }
   }
 
