@@ -12,9 +12,10 @@ import { RegistrationComponent } from './registration/registration.component';
 import { CoreRoutingModule } from "./core-routing.module";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { AcceuilComponent } from './acceuil/acceuil.component';
+import { CompteComponent } from './compte/compte.component';
 
 @NgModule({
-    declarations:[FooterComponent,HeaderComponent,AuthComponent, RegistrationComponent, AcceuilComponent],
+    declarations:[FooterComponent,HeaderComponent,AuthComponent, RegistrationComponent, AcceuilComponent, CompteComponent],
     exports:[HeaderComponent,FooterComponent,AuthComponent,CoreRoutingModule],
     imports:[CommonModule, MaterialFeatures, MatIconModule, ReactiveFormsModule,HttpClientModule,FormsModule],
     providers:[AuthService,RestDataSource]
