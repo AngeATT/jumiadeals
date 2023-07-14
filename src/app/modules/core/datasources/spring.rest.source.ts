@@ -4,7 +4,7 @@ import { Observable, map } from "rxjs";
 import { RegistrationForm } from "../registration/registationForm";
 import { DataSource } from "./datasource.interface";
 
-const baseUrl = `localhost://${location.hostname}:8080/api/auth/`
+const baseUrl = `${location.hostname}:8080/api/auth/`
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -29,9 +29,15 @@ export class RestDataSource implements DataSource {
                 return reponse.sucess;
             }));
     }
-
+    /**
+     * Methode pour enregistrer dans la bd mongoDB à tester si le stringify est utile
+     * @param userInformations 
+     * @returns 
+     */
     register(userInformations: RegistrationForm): Observable<any> {
-        return this.http.post<any>(baseUrl + "register", JSON.stringify(userInformations), httpOptions).pipe(
+        return this.http.post<any>(baseUrl + "register",{
+
+        }, httpOptions).pipe(
             map(response => {
                 return response.sucess;
             })

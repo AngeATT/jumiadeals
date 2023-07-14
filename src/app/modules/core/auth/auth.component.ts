@@ -30,7 +30,7 @@ export class AuthComponent {
     this.isSubmited = true;
     if (this.utilisateurForm.valid) {
        let userCredentials = new  UserCredentials(this.email,this.password);
-      if (this.auth.login(userCredentials)){
+      if (this.auth.login(this.email,this.password)){
         // this.router.navigateByUrl("/");
         this.isLoginCorrect = true;
       }else{

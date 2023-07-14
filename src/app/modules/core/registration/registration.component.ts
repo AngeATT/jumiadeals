@@ -12,6 +12,7 @@ export class RegistrationComponent {
   
   numeros: Map<String, Boolean> = new Map<string, boolean>();
   userInformations? : RegistrationForm;
+  isRegisterOK = false;
 
   registationForm =  this.formBuilder.group({
     nom : ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z\s]+/)]],
@@ -27,13 +28,13 @@ export class RegistrationComponent {
     if (this.registationForm.valid){
       this.numeros?.set(this.registationForm.get('password')?.value!, this.registationForm.get('isWhatsapp')?.value!);
       this.userInformations = new RegistrationForm(
-        this.nomControl!.get('value')!.value!,
+        this.nomControl?.value!,
         this.emailControl?.value!,
         this.numeros,
         this.passwordControl?.value!
       )
       if (this.authService.register(this.userInformations)){
-          
+          this.enregistrementOK();
       }else{
 
       }
@@ -47,5 +48,12 @@ export class RegistrationComponent {
   get numeroControl() { return this.registationForm.get('numero')}
 
   get passwordControl() {return this.registationForm.get('password')}
+
+  enregistrementOK() : void{
+    this.isRegisterOK = true;
+    setTimeout(
+      () => {this.isRegisterOK = false},2000
+    );
+  }
 
 }

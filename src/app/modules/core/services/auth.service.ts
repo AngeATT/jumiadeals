@@ -14,8 +14,8 @@ export class AuthService{
 
     constructor(private datasource: RestDataSource){}
 
-    login(userCredentials : UserCredentials): Observable<boolean>{
-        return this.datasource.login(userCredentials.email,userCredentials.password);
+    login(email? :string,password?: string): Observable<boolean>{
+        return this.datasource.login(email,password);
     }
 
     register(registrationForm: RegistrationForm) : Observable<Boolean>{
