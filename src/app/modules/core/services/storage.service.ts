@@ -15,15 +15,18 @@ export class StorageService {
         window.sessionStorage.clear();
     }
     /**
-     * 
-     * @param user identifiants de  
-     * l'utilisateur
+     * Sauvegarder les identifiants de l'utilisateur dans les 
+     * cookies
+     * @param user identifiants de  l'utilisateur
      */
     public saveUser(user: UserCredentials): void {
         window.sessionStorage.removeItem(USER_KEY);
         window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
     }
-
+    /**
+     * 
+     * @returns Recuperer l'utilisateur qui est connecté s'il    existe
+     */
     public getUser(): any {
         const user = window.sessionStorage.getItem(USER_KEY);
         if (user) {

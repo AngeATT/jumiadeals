@@ -5,6 +5,7 @@ import { Injectable } from "@angular/core";
 import { RestDataSource } from "../datasources/spring.rest.source";
 import { Observable } from "rxjs";
 import { RegistrationForm } from "../registration/registationForm";
+import { UserCredentials } from "./user.credentials";
 
 @Injectable()
 export class AuthService{
@@ -13,8 +14,8 @@ export class AuthService{
 
     constructor(private datasource: RestDataSource){}
 
-    login(email?: string, password?: string): Observable<boolean>{
-        return this.datasource.login(email,password);
+    login(userCredentials : UserCredentials): Observable<boolean>{
+        return this.datasource.login(userCredentials.email,userCredentials.password);
     }
 
     register(registrationForm: RegistrationForm) : Observable<Boolean>{

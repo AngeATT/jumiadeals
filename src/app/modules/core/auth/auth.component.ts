@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserCredentials } from '../services/user.credentials';
 
 @Component({
   selector: 'app-auth',
@@ -28,7 +29,8 @@ export class AuthComponent {
   authenticate(): void {
     this.isSubmited = true;
     if (this.utilisateurForm.valid) {
-      if (this.auth.login(this.email,this.password)){
+       let userCredentials = new  UserCredentials(this.email,this.password);
+      if (this.auth.login(userCredentials)){
         // this.router.navigateByUrl("/");
         this.isLoginCorrect = true;
       }else{
