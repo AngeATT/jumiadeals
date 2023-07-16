@@ -19,15 +19,13 @@ export class RestDataSource implements DataSource {
         return this.http.post<any>(baseUrl + "/logout", {}, httpOptions);
     }
 
-    login(email?: string, password?: string): Observable<boolean> {
-        return this.http.post<any>(baseUrl + "login", {
-            email: `${email}`,
-            password: `${password}`
-        },
-            httpOptions).pipe(map(reponse => {
-                console.log(reponse);
-                return reponse.sucess;
-            }));
+    login(email?: string, password?: string): Observable<any> {
+        return this.http.post
+            (baseUrl + "login", {
+                email: `${email}`,
+                password: `${password}`
+            },
+                httpOptions)
     }
     /**
      * Methode pour enregistrer dans la bd mongoDB à tester si le stringify est utile
@@ -35,12 +33,11 @@ export class RestDataSource implements DataSource {
      * @returns 
      */
     register(userInformations: RegistrationForm): Observable<any> {
-        return this.http.post<any>(baseUrl + "register",{
-
-        }, httpOptions).pipe(
-            map(response => {
-                return response.sucess;
-            })
-        )
+        return this.http.post(baseUrl + "register", {
+            nom: userInformations.nom,
+            email: userInformations.email,
+            password: userInformations.password,
+            numeros: userInformations.numeros
+        },httpOptions);
     };
 }

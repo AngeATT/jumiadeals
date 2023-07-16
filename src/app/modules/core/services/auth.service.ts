@@ -14,11 +14,11 @@ export class AuthService{
 
     constructor(private datasource: RestDataSource){}
 
-    login(email? :string,password?: string): Observable<boolean>{
+    login(email? :string,password?: string): Observable<any>{
         return this.datasource.login(email,password);
     }
 
-    register(registrationForm: RegistrationForm) : Observable<Boolean>{
+    register(registrationForm: RegistrationForm) : Observable<any>{
          return this.datasource.register(registrationForm);
      }
 }

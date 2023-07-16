@@ -13,6 +13,7 @@ export class RegistrationComponent {
   numeros: Map<String, Boolean> = new Map<string, boolean>();
   userInformations? : RegistrationForm;
   isRegisterOK = false;
+  errorMessage?: string;
 
   registationForm =  this.formBuilder.group({
     nom : ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z\s]+/)]],
@@ -33,11 +34,18 @@ export class RegistrationComponent {
         this.numeros,
         this.passwordControl?.value!
       )
-      if (this.authService.register(this.userInformations)){
-          this.enregistrementOK();
-      }else{
-
-      }
+      this.authService.register(this.userInformations).subscribe( {
+        next : data =>{
+          console.log(data)
+          this.isRegisterOK = true;
+        },
+        error : err =>{
+          this.errorMessage = err.error;
+          console.log(err);
+          console.log(this.errorMessage);
+          this.isRegisterOK = false;
+        }
+      });
     }
   }
 
