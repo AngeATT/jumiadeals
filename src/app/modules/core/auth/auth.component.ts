@@ -30,7 +30,10 @@ export class AuthComponent {
     this.isSubmited = true;
     if (this.utilisateurForm.valid) {
        let userCredentials = new  UserCredentials(this.email,this.password);
-      if (this.auth.login(this.email,this.password)){
+       let isLoginSucces = this.auth.login(this.email,this.password).subscribe(
+        reponse => console.log(reponse)
+       );
+      if (isLoginSucces){
         // this.router.navigateByUrl("/");
         this.isLoginCorrect = true;
       }else{
@@ -41,7 +44,6 @@ export class AuthComponent {
       this.isPasswordValid = this.passwordValid();
       this.isLoginCorrect = undefined;
     }
-    console.log(this.utilisateurForm.get('email')?.valid);
   }
 
 

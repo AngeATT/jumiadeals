@@ -4,7 +4,7 @@ import { Observable, map } from "rxjs";
 import { RegistrationForm } from "../registration/registationForm";
 import { DataSource } from "./datasource.interface";
 
-const baseUrl = `${location.hostname}:8080/api/auth/`
+const baseUrl = `http://${location.hostname}:8080/api/auth/`
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -43,7 +43,4 @@ export class RestDataSource implements DataSource {
             })
         )
     };
-
-
-
 }
