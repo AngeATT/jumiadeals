@@ -6,19 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./notification-bar.component.css']
 })
 export class NotificationBarComponent {
-  isNotifShown?= true;
+  isNotifShown?= false;
   textForNotif = "";
 
-  setTextNotif(text: string) {
+  public setTextNotif(text: string) {
     this.textForNotif = text;
   }
-  showNotif() {
+  public showNotif() {
     this.isNotifShown = true;
   }
-  hideNotif(){
+  public hideNotif(){
     this.isNotifShown = false;
   }
-  showNotifForXSeconds(seconds : number){
+  public showNotifForXSeconds(seconds : number){
     this.isNotifShown = true,
     setTimeout(
       ()=> {this.isNotifShown = false; },seconds*1000
