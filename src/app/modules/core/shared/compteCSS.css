@@ -4,14 +4,6 @@
     justify-content: center;
     align-items: center;
 }
-.confirmation-succes{
-    height: 50px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(233, 143, 33);
-    background-color: rgb(170, 98, 11);
-    color: aliceblue;
-}
 
 .paragraphes {
     

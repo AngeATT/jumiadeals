@@ -13,9 +13,10 @@ import { CoreRoutingModule } from "./core-routing.module";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { CompteComponent } from './compte/compte.component';
+import { NotificationBarComponent } from './notification-bar/notification-bar.component';
 
 @NgModule({
-    declarations:[FooterComponent,HeaderComponent,AuthComponent, RegistrationComponent, AcceuilComponent, CompteComponent],
+    declarations:[FooterComponent,HeaderComponent,AuthComponent, RegistrationComponent, AcceuilComponent, CompteComponent, NotificationBarComponent],
     exports:[HeaderComponent,FooterComponent,AuthComponent,CoreRoutingModule],
     imports:[CommonModule, MaterialFeatures, MatIconModule, ReactiveFormsModule,HttpClientModule,FormsModule],
     providers:[AuthService,RestDataSource]

@@ -12,7 +12,7 @@ export class RegistrationComponent {
   
   numeros: Map<String, Boolean> = new Map<string, boolean>();
   userInformations? : RegistrationForm;
-  isRegisterOK = false;
+  isRegisterOK = true;
   errorMessage?: string;
 
   registationForm =  this.formBuilder.group({
@@ -38,6 +38,7 @@ export class RegistrationComponent {
         next : data =>{
           console.log(data)
           this.isRegisterOK = true;
+          this.enregistrementOK();
         },
         error : err =>{
           this.errorMessage = err.error;
@@ -46,6 +47,7 @@ export class RegistrationComponent {
           this.isRegisterOK = false;
         }
       });
+
     }
   }
 
@@ -60,7 +62,9 @@ export class RegistrationComponent {
   enregistrementOK() : void{
     this.isRegisterOK = true;
     setTimeout(
-      () => {this.isRegisterOK = false},2000
+      () => {
+        this.isRegisterOK = false
+      },5000
     );
   }
 
