@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NotificationService } from './notifcation.service';
 
 @Component({
   selector: 'app-notification-bar',
@@ -6,22 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./notification-bar.component.css']
 })
 export class NotificationBarComponent {
-  isNotifShown?= false;
-  textForNotif = "";
+  isNotifShown?= this.notifService.isNotifShown;
+  textForNotif = this.notifService.textForNotif;
 
-  public setTextNotif(text: string) {
-    this.textForNotif = text;
-  }
-  public showNotif() {
-    this.isNotifShown = true;
-  }
-  public hideNotif(){
-    this.isNotifShown = false;
-  }
-  public showNotifForXSeconds(seconds : number){
-    this.isNotifShown = true,
-    setTimeout(
-      ()=> {this.isNotifShown = false; },seconds*1000
-    )
-  };
+  constructor( private notifService :NotificationService ){}
+
 }

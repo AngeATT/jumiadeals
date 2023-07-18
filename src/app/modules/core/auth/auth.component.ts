@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserCredentials } from '../services/user.credentials';
+import { NotificationBarComponent } from '../notification-bar/notification-bar.component';
+import { NotificationService } from '../notification-bar/notifcation.service';
 
 @Component({
   selector: 'app-auth',
@@ -13,7 +15,7 @@ export class AuthComponent {
   email?: string;
   password?: string;
 
-  isLoginCorrect : undefined | boolean;
+  isLoginCorrect? : boolean;
   isSubmited : boolean = false;
   isEmailValid: boolean | undefined = true;
   isPasswordValid : boolean | undefined = true;
@@ -24,19 +26,29 @@ export class AuthComponent {
     password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(12)]]
   });
 
-  constructor(private router: Router, public auth: AuthService, private fb: FormBuilder) {
+  constructor(private router: Router, public auth: AuthService, private fb: FormBuilder,public notification : NotificationService) {
   }
   authenticate(): void {
     this.isSubmited = true;
     if (this.utilisateurForm.valid) {
        let userCredentials = new  UserCredentials(this.email,this.password);
-       let isLoginSucces = this.auth.login(this.email,this.password).subscribe(
-        reponse => console.log(reponse)
-       );
-      if (isLoginSucces){
-        // this.router.navigateByUrl("/");
+       let isLoginOk = false;
+      this.auth.login(this.email,this.password).subscribe({
+        next : data =>{
+          console.log(data)
+
+        },
+        error : rep =>{
+            console.log(rep)
+        }
+       
+      });
+        
+      if (false){
         this.isLoginCorrect = true;
+        //this.router.navigateByUrl("/");
       }else{
+        this.notification.showNotifForXSeconds("Identifiants incorrects",5);
         this.isLoginCorrect = false;
       }
     }else{
