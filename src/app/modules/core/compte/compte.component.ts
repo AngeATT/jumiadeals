@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-compte',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
 })
 export class CompteComponent {
   public diag = false;
+  isUserLogged = false;
+
+  constructor(private storageService : StorageService){}
+
+  ngOnInit(){
+    if (this.storageService.isLoggedIn() ){
+      this.isUserLogged = true;
+    }
+  }
   
   hideDiag():void{
     this.diag = false;

@@ -4,6 +4,7 @@ import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserCredentials } from '../services/user.credentials';
 import { NotificationService } from '../notification-bar/notifcation.service';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-login',
@@ -14,18 +15,25 @@ export class AuthComponent {
   email?: string;
   password?: string;
 
+  isUserLogged = false;
   isLoginCorrect? : boolean;
   isSubmited : boolean = false;
   isEmailValid: boolean | undefined = true;
   isPasswordValid : boolean | undefined = true;
-  errorMsg?= '';
+  errorMsg = 'Identifiants incorrectes';
+
+  ngOnInit() : void{
+    if (this.storageService.isLoggedIn()){
+      this.isUserLogged = true;
+    }
+  }
 
   utilisateurForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(12)]]
   });
 
-  constructor(private router: Router, public auth: AuthService, private fb: FormBuilder,public notification : NotificationService) {
+  constructor(private router: Router, private auth: AuthService, private fb: FormBuilder,private notification : NotificationService, private storageService : StorageService) {
   }
   authenticate(): void {
     this.isSubmited = true;
@@ -33,11 +41,12 @@ export class AuthComponent {
        let userCredentials = new  UserCredentials(this.email,this.password);
       this.auth.login(this.email,this.password).subscribe({
         next : data =>{
+          this.storageService.saveUser(new UserCredentials(this.email,this.password));
           this.router.navigateByUrl("/");
           console.log(data)
         },
         error : rep =>{
-          this.notification.showNotifForXSeconds("Identifiants incorrects",5);
+          this.notification.showNotifForXSeconds(this.errorMsg,5);
             console.log(rep)
         }
       })
