@@ -7,7 +7,7 @@ import { AcceuilComponent } from "./acceuil/acceuil.component";
 const routes : Routes = [
     {path:"", component: AcceuilComponent},
     {path:"register",component:RegistrationComponent},
-    { path:"auth", component:AuthComponent},
+    { path:"login", component:AuthComponent},
 ];
 
 @NgModule({

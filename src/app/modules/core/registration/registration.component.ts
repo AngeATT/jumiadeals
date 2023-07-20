@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RegistrationForm } from './registationForm';
+import { NotificationService } from '../notification-bar/notifcation.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -23,7 +25,10 @@ export class RegistrationComponent {
     isWhatsapp : [false]
   })
 
-  constructor(public authService: AuthService, private formBuilder : FormBuilder){}
+  messageEnregistrementOk = "Enregistrement effectué avec succès";
+  messageErreurEnregistrement = "Erreur lors de l'inscription, Email déjà utilisée";
+
+  constructor(public authService: AuthService, private formBuilder : FormBuilder, public notifService : NotificationService, public router : Router){}
 
   enregistrementUtilisateur(){
     if (this.registationForm.valid){
@@ -39,10 +44,13 @@ export class RegistrationComponent {
           console.log(data)
           this.isRegisterOK = true;
           this.enregistrementOK();
+          this.router.navigateByUrl("login");
+          this.notifService.showNotifForXSeconds(this.messageEnregistrementOk,5);
         },
         error : err =>{
           this.errorMessage = err.error;
           console.log(err);
+          this.notifService.showNotifForXSeconds(this.messageErreurEnregistrement,6);
           console.log(this.errorMessage);
           this.isRegisterOK = false;
         }

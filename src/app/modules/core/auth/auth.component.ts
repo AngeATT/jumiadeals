@@ -3,11 +3,10 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserCredentials } from '../services/user.credentials';
-import { NotificationBarComponent } from '../notification-bar/notification-bar.component';
 import { NotificationService } from '../notification-bar/notifcation.service';
 
 @Component({
-  selector: 'app-auth',
+  selector: 'app-login',
   templateUrl: './auth.component.html',
   styleUrls: ['../shared/compteCss.css']
 })
@@ -32,25 +31,16 @@ export class AuthComponent {
     this.isSubmited = true;
     if (this.utilisateurForm.valid) {
        let userCredentials = new  UserCredentials(this.email,this.password);
-       let isLoginOk = false;
       this.auth.login(this.email,this.password).subscribe({
         next : data =>{
+          this.router.navigateByUrl("/");
           console.log(data)
-
         },
         error : rep =>{
+          this.notification.showNotifForXSeconds("Identifiants incorrects",5);
             console.log(rep)
         }
-       
-      });
-        
-      if (false){
-        this.isLoginCorrect = true;
-        //this.router.navigateByUrl("/");
-      }else{
-        this.notification.showNotifForXSeconds("Identifiants incorrects",5);
-        this.isLoginCorrect = false;
-      }
+      })
     }else{
       this.isEmailValid = this.emailValid()
       this.isPasswordValid = this.passwordValid();
