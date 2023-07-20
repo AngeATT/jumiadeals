@@ -7,9 +7,20 @@ import { NotificationService } from './notifcation.service';
   styleUrls: ['./notification-bar.component.css']
 })
 export class NotificationBarComponent {
-  isNotifShown?= this.notifService.isNotifShown;
-  textForNotif = this.notifService.textForNotif;
+  isNotifShown?: boolean;
+  textForNotif?: string;
 
-  constructor( private notifService :NotificationService ){}
+  constructor(private notifService: NotificationService) {
+    this.notifService.notif$.subscribe(notif => { this.textForNotif = notif })
+    this.notifService.seconds$.subscribe(seconds => {
+      this.isNotifShown = true;
+      if (seconds > -1) {
+        setTimeout(
+          () => { this.isNotifShown = false; }, 1000 * seconds
+        )
+      }
+    })
+  }
+
 
 }

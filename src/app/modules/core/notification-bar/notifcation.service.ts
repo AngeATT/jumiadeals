@@ -1,30 +1,21 @@
 import { Injectable } from "@angular/core";
-import { NotificationBarComponent } from "./notification-bar.component";
-
+import { Subject } from "rxjs";
 @Injectable({
     providedIn: 'root'
 })
 export class NotificationService {
+    private notifSource = new Subject<string>();
+    notif$ = this.notifSource.asObservable();
 
-    isNotifShown?= false;
+    //send -1 to make the notif permanently visible
+    private secondsToShowSource = new Subject<number>();
+    seconds$ = this.secondsToShowSource.asObservable();
+    
     textForNotif = "";
     //utiliser plutôt des observables pour communiquer
-
-    public setTextNotif(text: string) {
-        this.textForNotif = text;
-        this.isNotifShown = true;
-    }
-    public showNotif() {
-        this.isNotifShown = true;
-    }
-    public hideNotif() {
-        this.isNotifShown = false;
-    }
+    
     public showNotifForXSeconds(text: string, seconds: number) {
-        this.textForNotif = text;
-        this.isNotifShown = true,
-            setTimeout(
-                () => { this.isNotifShown = true; }, seconds * 10000
-            )
+        this.notifSource.next(text);
+        this.secondsToShowSource.next(seconds);
     };
 }
