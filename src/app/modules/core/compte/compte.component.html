@@ -1,13 +1,13 @@
-<div id="compte" (mouseover)="showDiag()">
-    <div *ngIf="!isUserLogged">
-        <div id="compteEtDiag" (mouseover)="showDiag()" (mouseout)="hideDiag()">
+<div id="compte" (mouseover)="showDiag()" (mouseout)="hideDiag()">
+    <div>
+        <div id="compteEtDiag" (mouseover)="showDiag()">
             <a id="compteLink" class="header-link" href=""><mat-icon>account_circle</mat-icon>
                 Mon Compte
             </a>
         </div>
-        <div [id]="diag ? 'compteDiag' : 'hide'" (mouseover)="showDiag()" (mouseout)="hideDiag()">
+        <div *ngIf="!isUserLogged" [id]="diag ? 'compteDiag' : 'hide'" (mouseover)="showDiag()" (mouseout)="hideDiag()">
             <button id="btnDiag">
-                <a id="lien-sancss" href="/login">Se connecter</a></button>
+                <a id="lien-sancss-connexion" href="/login">Se connecter</a></button>
             <ul id="link-compteDiag">
                 <li>Publier une annonce</li>
                 <li>Mes favoris</li>
@@ -19,5 +19,27 @@
             </ul>
         </div>
     </div>
+    <div *ngIf="isUserLogged">
+        <!-- diag ? ' : 'hide' '-->
+        <div [id]= "diag ? 'compteDiag' : 'hide'" class="compteDiagConnected" (mouseover)="showDiag()" (mouseout)="hideDiag()">
+            <ul id="link-compteDiag" class="link-logged">
+                <li class="iconAndText centerIcon"><mat-icon>account_balance_wallet</mat-icon>{{userMoney ?? 0 }} FCFA
+                </li>
+                <li>
+                    <hr>
+                </li>
+                <li class="iconAndText"><mat-icon>edit</mat-icon>Mes annonces</li>
+                <li class="iconAndText"><mat-icon>favorite_border</mat-icon>Mes favoris ({{favorisNumber}})</li>
+                <li class="iconAndText"><mat-icon>shopping_cart</mat-icon>Mes achats</li>
+                <li class="iconAndText">
+                    <mat-icon>settings</mat-icon> paramètres
+                </li>
+                <hr>
+            </ul>
+            <button id="btnDeconnexion">
+                <a id="lien-deconnexion" class="lien-deconnexion" href="/login">Se Deconnecter</a></button>
+            <hr>
 
+        </div>
+    </div>
 </div>

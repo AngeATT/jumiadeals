@@ -9,6 +9,8 @@ import { StorageService } from '../services/storage.service';
 export class CompteComponent {
   public diag = false;
   isUserLogged = false;
+  userMoney? : number;
+  favorisNumber : number = 0;
 
   constructor(private storageService : StorageService){}
 
