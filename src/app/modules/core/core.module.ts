@@ -15,9 +15,10 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
 import { CompteComponent } from './compte/compte.component';
 import { NotificationBarComponent } from './notification-bar/notification-bar.component';
 import { NotificationService } from "./notification-bar/notifcation.service";
+import { DashboardComponent } from './auth/dashboard/dashboard.component';
 
 @NgModule({
-    declarations:[FooterComponent,HeaderComponent,AuthComponent, RegistrationComponent, AcceuilComponent, CompteComponent, NotificationBarComponent],
+    declarations:[FooterComponent,HeaderComponent,AuthComponent, RegistrationComponent, AcceuilComponent, CompteComponent, NotificationBarComponent, DashboardComponent],
     exports:[HeaderComponent,FooterComponent,AuthComponent,CoreRoutingModule],
     imports:[CommonModule, MaterialFeatures, MatIconModule, ReactiveFormsModule,HttpClientModule,FormsModule],
     providers:[AuthService,RestDataSource, NotificationService]
