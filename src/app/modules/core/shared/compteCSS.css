@@ -151,4 +151,7 @@ h2{
     color: rgb(14, 83, 123);
 }
 
+.minwidth{
+    min-width: 990px;
+}
 

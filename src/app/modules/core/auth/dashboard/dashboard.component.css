@@ -1,0 +1,7 @@
+.header-bar{
+    height: 50px;
+    background-color: #0a6ead;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
