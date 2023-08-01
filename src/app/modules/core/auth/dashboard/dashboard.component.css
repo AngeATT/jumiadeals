@@ -4,4 +4,39 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    
+}
+
+.boxHeader{
+    display: inline-block;
+    vertical-align: middle;
+}
+.section-left{
+    display: flex;
+    color: white;
+    gap: 20px;
+}
+.section-right{
+    display: flex;
+    gap: 15px;
+    color: white;
+    align-items: center;
+}
+.section-right>img{
+    height: 38px;
+}
+.headerLink{
+    color: white;
+}
+.headerLink:hover{
+    color: rgb(216, 16, 56);
+}
+.icon{
+    height: 30px;
+    width: 30px;
+    position: relative;
+    top: 10px;
+    padding-right: 3px;
 }

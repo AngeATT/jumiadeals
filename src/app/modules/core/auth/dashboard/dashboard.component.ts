@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
   name?: string;
+  dateInscritpion?: string;
+  credit?: number;
 }

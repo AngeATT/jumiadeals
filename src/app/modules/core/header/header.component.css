@@ -2,6 +2,7 @@
     background: #fff;
     display: flex;
     flex-direction: column;
+    margin-bottom: 5px;
 }
 #header-pages {
     position: relative;
