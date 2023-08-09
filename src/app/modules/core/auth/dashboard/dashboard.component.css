@@ -40,3 +40,34 @@
     top: 10px;
     padding-right: 3px;
 }
+.nav-menu{
+    margin: 0;
+    margin-top: 2%;
+    padding: 0;
+
+}
+.nav-menu>li{
+    display: inline-block;
+    width: 24.2%;
+    height: 40px;
+    background-color: #eaeaea;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(188, 188, 188);
+    border-top: solid 3px #eaeaea;
+    margin-right: 0.5%;
+    text-align: center;
+}
+.nav-menu li a{
+    display: block;
+    position: relative;
+    text-decoration: inherit;
+    padding: 7px 0;
+    color: #000000;
+}
+.onFocusMenu{
+    background: white;
+    border-top: rgb(12, 67, 184);
+    border-top-width: 2px;
+}
+
