@@ -24,13 +24,16 @@
     </div>
 
 </aside>
-
 <nav>
     <ul class="nav-menu">
-       <li ngClass=""><a href="">Mes annonces  ({{nombreAnnonces ?? 0}})</a></li>
-       <li><a href="">Mes favoris  ({{nombreFavoris ?? 0}})</a></li>
-       <li><a href="">Mes achats</a></li>
-       <li><a href="">Paramètres</a>
+       <li><button href="/" [ngClass]="getClassButton(1)" (click)="setMenuActif(1)">Mes annonces  ({{nombreAnnonces ?? 0}})</button></li>
+       <li><button href="" (click)="setMenuActif(2)" [ngClass]="getClassButton(2)" >Mes favoris  ({{nombreFavoris ?? 0}})</button></li>
+       <li ><button href="" (click)="setMenuActif(3)" [ngClass]="getClassButton(3)">Mes achats</button></li>
+       <li ><button [ngClass]="" href="" (click)="setMenuActif(4)" [ngClass]="getClassButton(4)">Paramètres</button>
         </li> 
     </ul>
 </nav>
+<div class="dashboard-container"> 
+    <!-- mettre le router outlet ici-->
+</div>
+

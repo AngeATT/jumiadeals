@@ -11,4 +11,23 @@ export class DashboardComponent {
   credit?: number;
   nombreAnnonces? : number;
   nombreFavoris?:number;
+  menuActif = 1;
+  
+  idFenetreActive(){
+
+  }
+  setMenuActif(num : number){
+    this.menuActif = num;
+  }
+
+  getClassButton(key : number ) : Object {
+    return {
+      "menuButton" : true,
+      "onFocusMenu" : this.menuActif == key
+    }
+  }
+
+
+
 }
+
