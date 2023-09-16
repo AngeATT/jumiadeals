@@ -82,4 +82,50 @@ button:hover{
     border-style: solid;
     height: auto;
     width: auto;
+    min-height: 400px;
+}
+
+#filtres{
+    margin: 0;
+    padding: 0;
+    padding-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filtre-li{
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    padding-left: 20px;
+}
+.filtre-li::before{
+    content: "";
+    width: 10px;
+    height: 10px;
+    display: block;
+    position: absolute;
+    top: 16px;
+    left: 6px;
+    border-radius: 50%;
+}
+.filtre-li>a{
+    text-decoration: inherit;
+    font-style: inherit;
+    color: #2B88DE;
+}
+.filtre-li>a:hover{
+    color: #103454;
+}
+.active-link{
+    color: #000;
+    pointer-events: non;
+}
+#enattente::before{
+    background: #ffb515;
+}
+#publie::before{
+    background: #23cc5e;
+}#efface::before{
+    background: #f11d1d;
 }

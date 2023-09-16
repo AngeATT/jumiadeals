@@ -26,14 +26,26 @@
 </aside>
 <nav>
     <ul class="nav-menu">
-       <li><button href="/" [ngClass]="getClassButton(1)" (click)="setMenuActif(1)">Mes annonces  ({{nombreAnnonces ?? 0}})</button></li>
-       <li><button href="" (click)="setMenuActif(2)" [ngClass]="getClassButton(2)" >Mes favoris  ({{nombreFavoris ?? 0}})</button></li>
-       <li ><button href="" (click)="setMenuActif(3)" [ngClass]="getClassButton(3)">Mes achats</button></li>
-       <li ><button [ngClass]="" href="" (click)="setMenuActif(4)" [ngClass]="getClassButton(4)">Paramètres</button>
-        </li> 
+        <li><button href="/" [ngClass]="getClassButton(1)" (click)="setMenuActif(1)">Mes annonces ({{nombreAnnonces ??
+                0}})</button></li>
+        <li><button href="" (click)="setMenuActif(2)" [ngClass]="getClassButton(2)">Mes favoris ({{nombreFavoris ??
+                0}})</button></li>
+        <li><button href="" (click)="setMenuActif(3)" [ngClass]="getClassButton(3)">Mes achats</button></li>
+        <li><button [ngClass]="" href="" (click)="setMenuActif(4)" [ngClass]="getClassButton(4)">Paramètres</button>
+        </li>
     </ul>
 </nav>
-<div class="dashboard-container"> 
+<div class="dashboard-container">
     <!-- mettre le router outlet ici-->
-</div>
+    <div id="filtres">
 
+        <ul id="filtres">
+            <li class="filtre-li">Filtrer par :</li>
+            <li class="filtre-li"><a href="">Tous</a></li>
+            <li id = "enattente" class="filtre-li"><a href="">En attente</a>
+            </li>
+            <li id = "publie" class="filtre-li"><a href="">Publié</a></li>
+            <li id = "efface"class="filtre-li"><a href="">Effacé</a></li>
+        </ul>
+    </div>
+</div>
