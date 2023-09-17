@@ -83,6 +83,7 @@ button:hover{
     height: auto;
     width: auto;
     min-height: 400px;
+    padding-bottom: 20px;
 }
 
 #filtres{
@@ -109,6 +110,7 @@ button:hover{
     left: 6px;
     border-radius: 50%;
 }
+
 .filtre-li>a{
     text-decoration: inherit;
     font-style: inherit;
@@ -129,3 +131,36 @@ button:hover{
 }#efface::before{
     background: #f11d1d;
 }
+#publications{
+    display: flex;
+    padding: 10px;
+}
+#publications>img{
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    background-color: aliceblue;
+}
+.description{
+    min-width: 490px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.description>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#etat-publication{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: #eaeaea solid 1px;
+    padding-left: 10px;
+    
+}
+
