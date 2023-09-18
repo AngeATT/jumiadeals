@@ -15,12 +15,18 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
 import { CompteComponent } from './compte/compte.component';
 import { NotificationBarComponent } from './notification-bar/notification-bar.component';
 import { NotificationService } from "./notification-bar/notifcation.service";
-import { DashboardComponent } from './auth/dashboard/dashboard.component';
+import { DashboardComponent } from './compte/dashboard/dashboard.component';
+import { AnnoncesComponent } from './compte/dashboard/annonces/annonces.component';
+import { FavorisComponent } from './compte/dashboard/favoris/favoris.component';
+import { AchatsComponent } from './compte/dashboard/achats/achats.component';
+import { ParametresComponent } from './compte/dashboard/parametres/parametres.component';
+import { DashBoardRoutingModule } from "./compte/dashboard/dashboard-routing.module";
 
 @NgModule({
-    declarations:[FooterComponent,HeaderComponent,AuthComponent, RegistrationComponent, AcceuilComponent, CompteComponent, NotificationBarComponent, DashboardComponent],
+    declarations:[FooterComponent,HeaderComponent,AuthComponent, RegistrationComponent, AcceuilComponent, CompteComponent, NotificationBarComponent, DashboardComponent, AnnoncesComponent, FavorisComponent, AchatsComponent, ParametresComponent],
     exports:[HeaderComponent,FooterComponent,AuthComponent,CoreRoutingModule],
-    imports:[CommonModule, MaterialFeatures, MatIconModule, ReactiveFormsModule,HttpClientModule,FormsModule],
+    imports:[CommonModule, MaterialFeatures, MatIconModule, ReactiveFormsModule,HttpClientModule,FormsModule,CoreRoutingModule,
+    DashBoardRoutingModule],
     providers:[AuthService,RestDataSource, NotificationService]
 })
 export class CoreModule{}

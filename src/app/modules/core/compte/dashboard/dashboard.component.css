@@ -1,3 +1,7 @@
+.contenu{
+    min-width: 990px;
+}
+
 .header-bar{
     height: 50px;
     background-color: #0a6ead;
@@ -7,6 +11,7 @@
     padding-left: 50px;
     padding-right: 50px;
     margin-bottom: 2%;
+    margin-top: 0;
     
 }
 
@@ -81,7 +86,6 @@ button:hover{
     border-color: #eaeaea;
     border-style: solid;
     height: auto;
-    width: auto;
     min-height: 400px;
     padding-bottom: 20px;
 }
