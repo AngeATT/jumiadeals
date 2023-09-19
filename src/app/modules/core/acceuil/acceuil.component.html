@@ -1,23 +1,25 @@
 <div class="minwidth">
-    <div>
-        <h2 id="title">Site de Petites Annonces en Côte D'ivoire</h2>
-        <h3 id="ville">Choississez votre ville</h3>
-        <div id="ville-container">
-              <ul id="villes">
-                <li *ngFor="let ville of villes; let i = index;">{{ville}}</li>
-            </ul>  
+    <div><h2 id="title">Site de Petites Annonces en Côte D'ivoire</h2></div>
+    <div id="appel-action">
+        <div>
+            <h3 id="ville">Choississez votre ville</h3>
+            <div id="ville-container">
+                <ul id="villes">
+                    <li *ngFor="let ville of villes; let i = index;">{{ville}}</li>
+                </ul>
+            </div>
+            <div>
+                <button id="publier-annonce"><a href="">Publiez votre annonce en Côte d'ivoire</a></button>
+            </div>
         </div>
         <div>
-            <button id="publier-annonce"><a href="">Publiez votre annonce en Côte d'ivoire</a></button>
+            <ul style="list-style: none;">
+                <li><img class="img-v" src="../../../../assets/cocher.PNG"> tout sur Jumia Deals
+                <li><img class="img-v" src="../../../../assets/cocher.PNG">Des centaines d'acheteurs chaque jour</li>
+                <li><img class="img-v" src="../../../../assets/cocher.PNG">Ajoutez des images pour vendre plus vite !</li>
+                <li><a href="">Voir toutes les annonces en Côte d’Ivoire</a></li>
+            </ul>
         </div>
-    </div>
-    <div>
-        <ul>
-            <li>Vendez tout sur Jumia Deals
-            <li>Des centaines d'acheterus tous les jours</li>
-            <li>Ajoutez des images pour vendre plus vite !</li>
-            <li><a href="">Voir toutes les annonces en Côte d’Ivoire</a></li>
-        </ul>
     </div>
     <div>
         <div>

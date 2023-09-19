@@ -8,6 +8,7 @@
 }
 #ville{
     font-weight: 500;
+    margin-bottom: 0;
 }
 #villes{
     color: blue;
@@ -40,3 +41,12 @@
     background-image: linear-gradient(to bottom, #e9d520 0%,#f9cd00 100%);;
     cursor: pointer;
 }
+#appel-action{
+    display: flex;
+    justify-content: space-between;
+}
+.img-v{
+    position: relative;
+    top: 10px;
+}
+
