@@ -31,10 +31,7 @@ const routes: Routes = [
         {
             path: 'parametres',
             component: ParametresComponent
-        },{
-            path: '**',
-            component : AnnoncesComponent
-        }
+        },
      ]
     }
     

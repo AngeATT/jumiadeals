@@ -24,10 +24,9 @@ export class DashboardComponent implements OnInit {
     this.menuActif = num;
   }
 
-  getClassButton(key: number): Object {
+  getClassButton(): Object {
     return {
       "menuButton": true,
-      "onFocusMenu": this.menuActif == key
     }
   }
 }

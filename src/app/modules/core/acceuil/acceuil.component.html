@@ -1,16 +1,15 @@
 <div class="minwidth">
     <div>
-        <H2>Site de Petites Annonces en Côte D'ivoire</H2>
-        <h3>Choississez votre ville</h3>
-        <div *ngFor="let ville of villes; let i = index ">
-            <ul>
-                <li *ngIf="i<3">{{ville}}</li>
-            </ul>
-            <ul>
-                <li *ngIf="i>=3 && i < 6">{{ville}}</li>
-            </ul>
+        <h2 id="title">Site de Petites Annonces en Côte D'ivoire</h2>
+        <h3 id="ville">Choississez votre ville</h3>
+        <div id="ville-container">
+              <ul id="villes">
+                <li *ngFor="let ville of villes; let i = index;">{{ville}}</li>
+            </ul>  
         </div>
-        <button><a href="">Publiez votre annonce en Côte d'ivoire</a></button>
+        <div>
+            <button id="publier-annonce"><a href="">Publiez votre annonce en Côte d'ivoire</a></button>
+        </div>
     </div>
     <div>
         <ul>
@@ -21,10 +20,15 @@
         </ul>
     </div>
     <div>
-        <div><p>Achetez et vendez en toute sécurité !</p>
-        <p>Chaque annonce est vérifiée par notre équipe. <a href="">Lisez nos conseils</a> pour faire de bonnes affaires
-            en toute sécurité. </p></div>
-        <div><p>Jumia deals sur facebook</p>
-        <button>like</button></div>
+        <div>
+            <p>Achetez et vendez en toute sécurité !</p>
+            <p>Chaque annonce est vérifiée par notre équipe. <a href="">Lisez nos conseils</a> pour faire de bonnes
+                affaires
+                en toute sécurité. </p>
+        </div>
+        <div>
+            <p>Jumia deals sur facebook</p>
+            <button>like</button>
+        </div>
     </div>
 </div>

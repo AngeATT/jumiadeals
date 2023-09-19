@@ -108,6 +108,7 @@
 
 .btn-annonce:hover {
     background-color: #ecd32e;
+    cursor: pointer;
 }
 
 #compteDiag {
