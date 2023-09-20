@@ -59,4 +59,41 @@
 #liste-action{
     line-height: 45px;
 }
+#box-appel-action{
+    display: flex;
+    border: 1px solid #eee;
+}
+#box-appel-action>div>p{
+    margin: 0;
+    font-size: small;
+    line-height: 20px;
+    padding-top: 3px;
+}
+
+#box-like{
+   font-size: smaller;
+   line-height: 1.4em; 
+}
+#box-like{
+    margin: 0;
+    border: 1px solid #eee;
+    width: fit-content;
+    height: 55px;
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#box-like>p{
+    margin: 0;
+    color: rgb(69, 69, 246);
+}
+#box-like>button{
+    color: white;
+    background-color: rgb(31, 114, 249);
+    padding: 5px;
+    border-radius: 1px;
+    border: 0px solid ;
+}
+
 
