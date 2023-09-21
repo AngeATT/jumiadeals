@@ -26,7 +26,7 @@
             </ul>
         </div>
     </div>
-    <div style="display : flex; justify-content : space-evenly">
+    <div style="display : flex; justify-content : space-evenly; margin-top : 45px;">
         <div id="box-appel-action">
             <img src="../../../../assets/bouclier.PNG">
             <div>
@@ -40,7 +40,129 @@
             <button id="facebook-btn"><img src="" alt="">like {{likes ?? 10}}</button>
         </div>
     </div>
-    <div>
-        
+</div>
+<div id="container-categories">
+    <div class="minwidth">
+       <h2 id="titre-categorie">Découvrez nos catégories :</h2> 
+    </div>
+    
+    <div id="categories" class="minwidth">
+        <div class="categorie">
+            <img src="../../../../assets/tel.PNG" alt="Téléphones & Tablettes">
+            <a href="">Téléphones & Tablettes({{nbTelephones ?? 10000}})</a>
+            <ul class="ul-categorie">
+                <li>Mobiles & Smartphones</li>
+                <li>Tablettes</li>
+                <li>Accessoires Téléphones</li>
+            </ul>
+        </div>
+        <div class="categorie">
+            <img src="../../../../assets/television.PNG" alt="Informatique & Multimédia">
+            <a href="">Informatique & MultiMedia({{nbInformatique ?? 10000}})</a>
+            <ul class="ul-categorie">
+                <li>Ordinateurs</li>
+                <li>Jeu vidéos & Consoles</li>
+                <li>TV & Vidéo</li>
+                <li>Photo & Caméras</li>
+                <li>Son, Casques Enceintes</li>
+                <li>Accessoires informatiques</li>
+            </ul>
+        </div>
+        <div class="categorie">
+            <img src="../../../../assets/voiture.PNG" alt="Informatique & Multimédia">
+            <a href="">Vehicules({{nbVehicules ?? 10000}})</a>
+            <ul class="ul-categorie">
+                <li>Voitures d'occasions</li>
+                <li>Voitures neuves</li>
+                <li>Location de véhicules</li>
+                <li>Motos & Vélos</li>
+                <li>Véhicules professionnels</li>
+                <li>Bateau & nautisme</li>
+                <li>Equipement auto</li>
+            </ul>
+        </div>
+        <div class="categorie">
+            <img src="../../../../assets/maison.PNG" alt="Immobilier">
+            <a href="">Immobilier({{nbImmobilier ?? 10000}})</a>
+            <ul class="ul-categorie">
+                <li>Appartements à vendre</li>
+                <li>Appartements à louer</li>
+                <li>Appartements meublés</li>
+                <li>Studios & chambres à louer</li>
+                <li>Maisons à vendre</li>
+                <li>Maisons à louer</li>
+            </ul>
+        </div>
+        <div class="categorie">
+            <img src="../../../../assets/chaussures.PNG" alt="mode & vêtements">
+            <a href="">Mode & Vêtements({{nbVetements ?? 10000}})</a>
+            <ul class="ul-categorie">
+                <li>Vêtements Hommes</li>
+                <li>Chaussures Homme</li>
+                <li>Vêtements Femme</li>
+                <li>Chaussures Femme</li>
+                <li>Vêtements enfants</li>
+                <li>Sacs & Bagagerie</li>
+            </ul>
+        </div>
+        <div class="categorie">
+            <img src="../../../../assets/guitare.PNG" alt="Loisirs">
+            <a href="">Loisirs({{nbLoisirs ?? 10000}})</a>
+            <ul class="ul-categorie">
+                <li>Sport & Fitness</li>
+                <li>Instruments de musique</li>
+                <li>LIvres, FIlms, Jouets</li>
+                <li>Evenements</li>
+                <li>Voyage & Tourisme</li>
+                <li>Art & Artisanat</li>
+            </ul>
+        </div>
+        <div class="categorie">
+            <img src="../../../../assets/fauteuil.PNG" alt="Pour la Maison">
+            <a href="">Pour la Maison({{nbPourMaison ?? 10000}})</a>
+            <ul class="ul-categorie">
+                <li>Electroménager</li>
+                <li>Meubles & Luminaires</li>
+                <li>Décoration</li>
+                <li>Arts de la table & Vaisselles</li>
+                <li>Literie</li>
+                <li>Bricolage & Jardinage</li>
+            </ul>
+        </div>
+        <div class="categorie">
+            <img src="../../../../assets/outils.PNG" alt="Emplois & Formations">
+            <a href="">Emplois & Formations({{nbEmplois ?? 10000}})</a>
+            <ul class="ul-categorie">
+                <li>Offres d'emplois</li>
+                <li>Formations & Cours</li>
+                <li>Recherche d'Emploi</li>
+            </ul>
+        </div>
+        <div class="categorie">
+            <img src="../../../../assets/personnes.PNG" alt="Entreprises & Services">
+            <a href="">Entreprises & Services({{nbEntreprise ?? 10000}})</a>
+            <ul class="ul-categorie">
+                <li>Entreprises & Services</li>
+                <li>Services</li>
+                <li>Equipement professionnel</li>
+                <li>Equipement de Bureau</li>
+                <li>Matériaux de construction</li>
+                <li>Produits agricoles & Elevage</li>
+            </ul>
+        </div>
+        <div class="categorie">
+            <img src="../../../../assets/beaute.PNG" alt="Beauté & Bien être">
+            <a href="">Beauté & Bien être({{nbBeauteBienEtre ?? 10000}})</a>
+            <ul class="ul-categorie">
+                <li>Beauté & Bien être</li>
+                <li>Massages Pro</li>
+                <li>Cométiques & SOins</li>
+                <li>Parfums</li>
+                <li>Santé & parfums</li>
+                <li>Accessoires beauté</li>
+            </ul>
+
+        </div>
+
     </div>
 </div>

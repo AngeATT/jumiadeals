@@ -8,6 +8,14 @@ import { Component } from '@angular/core';
 export class AcceuilComponent {
   villes: String[] = ["Abidjan", "Bouake", "Daloa", "Korogho", "San-pedro", "Yamoussoukro"];
   likes?: number;
-
-  
+  nbTelephones? :number;
+  nbInformatique? : number;
+  nbVehicules? : number;
+  nbImmobilier? : number;
+  nbVetements? : number;
+  nbLoisirs? : number;
+  nbPourMaison? : number;
+  nbEmplois? : number;
+  nbEntreprise? : number;
+  nbBeauteBienEtre?: number;
 }
