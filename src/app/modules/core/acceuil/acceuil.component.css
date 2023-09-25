@@ -118,6 +118,10 @@
     text-align: center;
     font-size: smaller;
 }
+.ul-categorie>li:hover{
+    color: rgb(18, 91, 210);
+    cursor: pointer;
+}
 #container-categories{
     margin-top: 50px;
     width: 100%;
