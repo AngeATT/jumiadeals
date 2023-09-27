@@ -120,7 +120,7 @@
     border-color: #f1f0f0;
     background-color: #ffffff;
     border-style: solid;
-    position: fixed;
+    position: absolute;
     top: 95px;
     padding: 10px;
     border-radius: 5px;
@@ -170,7 +170,7 @@
     flex-direction: column;
     flex-grow: 0;
     justify-content: center;
-    height: 50px;
+    height: 75px;
 }
 #compteEtDiag{
     display: flex;

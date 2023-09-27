@@ -138,4 +138,16 @@
     text-decoration: none;
     margin-bottom: 10px;
 }
+.categorie>a{
+    font-size: medium;
+}
+.categorie>img{
+    height: 80px;
+}
+.categorie>a{
+    height: 20px;
+    font-size: 0.90em;
+    line-height: 1px;
+    color: #0a6ead;
+}
 

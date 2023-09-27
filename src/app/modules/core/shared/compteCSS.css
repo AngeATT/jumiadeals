@@ -21,10 +21,13 @@
     border-width: 1px;
     border-color: #DDDD;
     box-shadow: 0 0 1em#DDDD;
+    margin: 0 auto;
 }
 #box-connexion{
     height: 500px;
     width: 620px;
+    margin: 0 auto;
+    margin-bottom: 10%;
 }
 #box-inscription{
     margin-bottom: 50px;
