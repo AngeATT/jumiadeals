@@ -19,11 +19,22 @@ export class CompteComponent {
       this.isUserLogged = true;
     }
   }
+  log(){
+    if (this.storageService.isLoggedIn() ){
+      this.isUserLogged = true;
+    }else{
+      this.isUserLogged = false;
+    }
+  }
   
   hideDiag():void{
     this.diag = false;
   }
   showDiag(){
+    this.log();
     this.diag = true;
+  }
+  seDeconnecter(){
+    this.storageService.clean();
   }
 }
