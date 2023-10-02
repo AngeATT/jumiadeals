@@ -22,4 +22,8 @@ export class AuthService{
          return this.datasource.register(registrationForm);
      }
 
+     logout(){
+        return this.datasource.logout();
+     }
+
 }

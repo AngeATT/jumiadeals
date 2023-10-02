@@ -16,7 +16,7 @@ export class RestDataSource implements DataSource {
 
     constructor(private http: HttpClient) { }
     logout(): Observable<any> {
-        return this.http.post<any>(baseUrl + "/logout", {}, httpOptions);
+        return this.http.post<any>(baseUrl + "/signout", {}, httpOptions);
     }
 
     login(email?: string, password?: string): Observable<any> {

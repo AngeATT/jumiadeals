@@ -41,19 +41,23 @@ export class AuthComponent {
        let userCredentials = new  UserCredentials(this.email,this.password);
       this.auth.login(this.email,this.password).subscribe({
         next : data =>{
-          this.storageService.saveUser(new UserCredentials(this.email,this.password));
-          this.router.navigateByUrl("/");
-          console.log(data)
+          this.storageService.saveUser(userCredentials);
+          console.log(data);
+          this.isLoginCorrect = true;
         },
         error : rep =>{
           this.notification.showNotifForXSeconds(this.errorMsg,5);
-            console.log(rep)
+            console.log(rep);
+            this.isLoginCorrect = false;
         }
       })
     }else{
       this.isEmailValid = this.emailValid()
       this.isPasswordValid = this.passwordValid();
       this.isLoginCorrect = undefined;
+    }
+    if (this.isLoginCorrect){
+      this.router.navigateByUrl("/dashboard");
     }
   }
 

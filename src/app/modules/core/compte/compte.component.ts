@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StorageService } from '../services/storage.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-compte',
@@ -12,7 +13,7 @@ export class CompteComponent {
   userMoney? : number;
   favorisNumber : number = 0;
 
-  constructor(private storageService : StorageService){}
+  constructor(private storageService : StorageService, private authService : AuthService){}
 
   ngOnInit(){
     if (this.storageService.isLoggedIn() ){
@@ -35,6 +36,8 @@ export class CompteComponent {
     this.diag = true;
   }
   seDeconnecter(){
+    this.authService.logout();
     this.storageService.clean();
+    
   }
 }
