@@ -43,6 +43,7 @@ export class AuthComponent {
         next : data =>{
           this.storageService.saveUser(userCredentials);
           this.isLoginCorrect = true;
+          this.router.navigateByUrl("/dashboard");
         },
         error : rep =>{
           this.notification.showNotifForXSeconds(this.errorMsg,5);
