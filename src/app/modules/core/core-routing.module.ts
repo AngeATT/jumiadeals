@@ -10,12 +10,8 @@ const routes : Routes = [
 
     {path:"register",
     component:RegistrationComponent},
-    { path:"login", 
+    { path:"login",
     component:AuthComponent
-    },
-    {
-        path : '**',
-        component : AcceuilComponent
     }
 ];
 

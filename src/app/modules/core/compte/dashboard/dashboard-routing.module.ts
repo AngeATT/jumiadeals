@@ -1,33 +1,25 @@
-import { Component, Inject, Injectable, NgModule } from "@angular/core";
-import { CanActivate, RouterModule, Routes } from "@angular/router";
-import { DashboardComponent } from "./dashboard.component";
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { authGuard } from "../../auth/auth.guard";
+import { AchatsComponent } from "./achats/achats.component";
 import { AnnoncesComponent } from "./annonces/annonces.component";
+import { DashboardComponent } from "./dashboard.component";
 import { FavorisComponent } from "./favoris/favoris.component";
 import { ParametresComponent } from "./parametres/parametres.component";
-import { AchatsComponent } from "./achats/achats.component";
-import { StorageService } from "../../services/storage.service";
 
-
-@Injectable({providedIn: 'root'})
-export class LoggedInGuard implements CanActivate {
-  constructor(private loginService: StorageService) {}
-  canActivate() {
-    return this.loginService.isLoggedIn();
-  }
-}
 
 const routes: Routes = [
     {
      path: 'dashboard',
      component: DashboardComponent,
-     canActivate : [LoggedInGuard],
+     canActivate : [authGuard],
      children : [
         {
             path :'',
             component :AnnoncesComponent,
 
         },
-        {  
+        {
             path : 'annonces',
             component : AnnoncesComponent
         },
@@ -49,12 +41,13 @@ const routes: Routes = [
         },
      ]
     }
-    
+
 ]
 
 @NgModule({
     imports : [RouterModule.forChild(routes)],
-    exports: []
+    exports: [],
+
 })
 export class DashBoardRoutingModule{}
 

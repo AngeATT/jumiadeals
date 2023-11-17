@@ -1,5 +1,6 @@
 .contenu{
-    min-width: 990px;
+    max-width: 990px;
+    margin: 0 auto;
 }
 
 .header-bar{
@@ -12,7 +13,7 @@
     padding-right: 50px;
     margin-bottom: 2%;
     margin-top: 0;
-    
+
 }
 
 .boxHeader{
@@ -75,7 +76,7 @@
 }
 .onFocusMenu{
     background: rgb(157, 220, 250);
-    
+
 }
 button:hover{
     background-color: rgb(157, 220, 250);
@@ -165,6 +166,6 @@ button:hover{
     align-items: center;
     border-left: #eaeaea solid 1px;
     padding-left: 10px;
-    
+
 }
 

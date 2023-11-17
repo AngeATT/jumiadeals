@@ -42,12 +42,10 @@ export class AuthComponent {
       this.auth.login(this.email,this.password).subscribe({
         next : data =>{
           this.storageService.saveUser(userCredentials);
-          console.log(data);
           this.isLoginCorrect = true;
         },
         error : rep =>{
           this.notification.showNotifForXSeconds(this.errorMsg,5);
-            console.log(rep);
             this.isLoginCorrect = false;
         }
       })
@@ -69,7 +67,7 @@ export class AuthComponent {
       return false;
     }
   }
-  
+
   passwordValid() : boolean | undefined{
     if (this.isSubmited){
       return !this.utilisateurForm.get('password')?.valid;
