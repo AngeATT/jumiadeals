@@ -125,7 +125,7 @@
     padding: 10px;
     border-radius: 5px;
     z-index: 100;
-    
+
 }
 #compteDiag::before{
     content: "";
@@ -221,3 +221,7 @@
     justify-content: center;
 }
 
+#btn-publier-annonce{
+  text-decoration: inherit;
+  color: #000;
+}

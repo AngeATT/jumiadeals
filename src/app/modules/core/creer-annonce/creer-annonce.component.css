@@ -1,0 +1,11 @@
+.contenu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #DDDD;
+    box-shadow: 0 0 1em#DDDD;
+    margin: 0 auto;
+}

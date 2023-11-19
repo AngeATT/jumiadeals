@@ -28,9 +28,9 @@ export class RestDataSource implements DataSource {
                 httpOptions)
     }
     /**
-     * Methode pour enregistrer dans la bd mongoDB à tester si le stringify est utile
-     * @param userInformations 
-     * @returns 
+     * Methode pour enregistrer dans la bd mongoDB 
+     * @param userInformations
+     * @returns
      */
     register(userInformations: RegistrationForm): Observable<any> {
         return this.http.post(baseUrl + "register", {
