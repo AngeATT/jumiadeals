@@ -5,6 +5,7 @@ import { AuthComponent } from "./auth/auth.component";
 import { AcceuilComponent } from "./acceuil/acceuil.component";
 import { DashboardComponent } from "./compte/dashboard/dashboard.component";
 import { CreerAnnonceComponent } from "./creer-annonce/creer-annonce.component";
+import { ValiderInscriptionComponent } from "./valider-inscription/valider-inscription.component";
 
 const routes : Routes = [
     {path:"", component: AcceuilComponent,},
@@ -17,6 +18,9 @@ const routes : Routes = [
     {
       path: "creer-annonce",
       component: CreerAnnonceComponent
+    },{
+      path : "/activate/{%s}",
+      component : ValiderInscriptionComponent
     }
 ];
 

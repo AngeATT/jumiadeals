@@ -22,9 +22,10 @@ import { AchatsComponent } from './compte/dashboard/achats/achats.component';
 import { ParametresComponent } from './compte/dashboard/parametres/parametres.component';
 import { DashBoardRoutingModule } from "./compte/dashboard/dashboard-routing.module";
 import { CreerAnnonceComponent } from './creer-annonce/creer-annonce.component';
+import { ValiderInscriptionComponent } from './valider-inscription/valider-inscription.component';
 
 @NgModule({
-    declarations:[FooterComponent,HeaderComponent,AuthComponent, RegistrationComponent, AcceuilComponent, CompteComponent, NotificationBarComponent, DashboardComponent, AnnoncesComponent, FavorisComponent, AchatsComponent, ParametresComponent, CreerAnnonceComponent],
+    declarations:[FooterComponent,HeaderComponent,AuthComponent, RegistrationComponent, AcceuilComponent, CompteComponent, NotificationBarComponent, DashboardComponent, AnnoncesComponent, FavorisComponent, AchatsComponent, ParametresComponent, CreerAnnonceComponent, ValiderInscriptionComponent],
     exports:[HeaderComponent,FooterComponent,AuthComponent,CoreRoutingModule],
     imports:[CommonModule, MaterialFeatures, MatIconModule, ReactiveFormsModule,HttpClientModule,FormsModule,CoreRoutingModule,
     DashBoardRoutingModule],
