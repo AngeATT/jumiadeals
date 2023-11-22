@@ -1,3 +1,4 @@
+
 .conteneur-auth {
     display: flex;
     flex-direction: column;
@@ -53,7 +54,7 @@
     border-color: #DDDD;
     width: 380px;
     height: 40px;
-    border-radius: 3px;
+    border-radius: 17px;
     padding-left: 10px;
     font-size: smaller;
     transition: 0.3s;
@@ -113,11 +114,12 @@ hr {
     border-style: solid;
     border-color: red;
     border-width: 1px;
-    border-radius: 2px;
+    border-radius: 17px;
 }
 .errorMsg{
     color: red;
     font-size: 12px;
+    text-align: center;
 
 }
 

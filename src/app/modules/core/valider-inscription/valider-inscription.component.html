@@ -1,3 +1,37 @@
-<div class="page">
-  
+<div class="bg-gray-100 h-screen pt-100">
+  <div
+    class="bg-white p-8 rounded shadow-md w-full md:w-4/5 lg:w-3/5 xl:w-2/5 mx-auto text-center mt-10"
+  >
+    <h1 class="text-3xl font-semibold mb-6 text-gray-800">
+      Inscription Réussie
+    </h1>
+    <p class="text-gray-600 mb-4">
+      Félicitations, votre inscription a été effectuée avec succès.
+    </p>
+    <p class="text-gray-600 mb-4">
+      Vous pouvez maintenant vous connecter avec votre compte.
+    </p>
+
+    <a
+      href="/connexion"
+      class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300"
+      >Se Connecter</a
+    >
+  </div>
+  <div class="bg-white p-8 rounded shadow-md w-full md:w-4/5 lg:w-3/5 xl:w-2/5 mx-auto text-center mt-10">
+    <h1 class="text-2xl font-semibold mb-6 text-gray-400">
+      Echec de la confirmation du mail.
+    </h1>
+    <p class="text-red-600 mb-4">
+      Lien expiré !
+    </p>
+    <a href=""
+      (click)="renvoyerToken()"
+      class="inline-block bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition duration-300"
+      >Renvoyer le token</a
+    >
+  </div>
 </div>
+
+
+

@@ -14,30 +14,30 @@ const httpOptions = {
 };
 
 @Injectable()
-export class AuthService{
-    email?: string;
-    password?: string;
+export class AuthService {
+  email?: string;
+  password?: string;
 
-    constructor(private datasource: RestDataSource, private storage : StorageService, private http : HttpClient){}
+  constructor(private datasource: RestDataSource, private storage: StorageService, private http: HttpClient) { }
 
-    login(email? :string,password?: string): Observable<any>{
-        return this.datasource.login(email,password);
-    }
+  login(email?: string, password?: string): Observable<any> {
+    return this.datasource.login(email, password);
+  }
 
-    register(registrationForm: RegistrationForm) : Observable<any>{
-         return this.datasource.register(registrationForm);
-     }
+  register(registrationForm: RegistrationForm): Observable<any> {
+    return this.datasource.register(registrationForm);
+  }
 
-     logout(){
-        return this.datasource.logout();
-     }
+  logout() {
+    return this.datasource.logout();
+  }
 
-     isLogged() : boolean{
-      return this.storage.isLoggedIn();
-     }
+  isLogged(): boolean {
+    return this.storage.isLoggedIn();
+  }
 
-     verifyToken(token : string) : Observable<any>{
-      return this.http.post(API_BACK+"/activate/?token={token}",token,httpOptions);
-     }
+  verifyToken(token: string): Observable<any> {
+    return this.http.post(API_BACK + "/activate/?token={token}", token, httpOptions);
+  }
 
 }
