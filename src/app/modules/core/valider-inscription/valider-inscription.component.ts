@@ -12,7 +12,6 @@ enum TokenStatus {
   SENT
 }
 
-
 @Component({
   selector: 'app-valider-inscription',
   templateUrl: './valider-inscription.component.html',
@@ -21,24 +20,34 @@ enum TokenStatus {
 export class ValiderInscriptionComponent implements OnInit{
 
   private token : string | null = '';
-  private tokenStatut = TokenStatus;
-  private messageErreur = 'Lien expiré !';
+  tokenStatut! : TokenStatus;
+  TokenEnum = TokenStatus;
+  private messageErreur = '';
 
   constructor(private authService : AuthService, private route : ActivatedRoute, private notif : NotificationService ){}
 
   ngOnInit(): void {
     this.token = this.route.snapshot.queryParamMap.get("token");
     if(this.token){
-      this.authService.verifyToken(this.token).subscribe(
-        data=>{
-          
+      this.authService.verifyToken(this.token).subscribe({
+        next : (data) =>{
+          this.tokenStatut = data.message as TokenStatus;
+        },
+        error : (e)=>{
+          this.messageErreur = e.error.message;
         }
-      )
+      });
     }
   }
   renvoyerToken(){
-    //notification pour token renvoyé et cacher le lien
+    this.tokenStatut = TokenStatus.SENDING;
+    this.authService.resendToken(this.token!).subscribe({
+      error : (e)=>{
+        this.messageErreur = e.error.message;
+      },
+      complete : () =>{
+        this.tokenStatut = TokenStatus.SENT;
+      }
+    });
   }
-
-
 }

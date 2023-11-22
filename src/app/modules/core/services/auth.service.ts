@@ -10,7 +10,7 @@ import { StorageService } from "./storage.service";
 
 const API_BACK = "http://localhost:8080/api/auth";
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'text/plain' })
 };
 
 @Injectable()
@@ -37,7 +37,15 @@ export class AuthService {
   }
 
   verifyToken(token: string): Observable<any> {
-    return this.http.post(API_BACK + "/activate/?token={token}", token, httpOptions);
+    const url = API_BACK + "/activate"
+    const body= token;
+    return this.http.post(url, body, httpOptions);
+  }
+
+  resendToken(token: string): Observable<any> {
+    const url  = API_BACK + "/resend"
+    const body = token;
+    return this.http.post(url, body, httpOptions);
   }
 
 }
