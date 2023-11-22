@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegistrationForm } from './registationForm';
 import { NotificationService } from '../notification-bar/notifcation.service';
 import { Router, RouterLink } from '@angular/router';
@@ -10,25 +10,51 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './registration.component.html',
   styleUrls: ['../shared/compteCss.css']
 })
-export class RegistrationComponent {
-  
+export class RegistrationComponent implements OnInit {
+
+  constructor(public authService: AuthService, private formBuilder : FormBuilder, public notifService : NotificationService, public router : Router){}
+
   numeros: Map<String, Boolean> = new Map<string, boolean>();
   userInformations? : RegistrationForm;
-  isRegisterOK = true;
   errorMessage?: string;
+  registationForm! : FormGroup;
 
-  registationForm =  this.formBuilder.group({
-    nom : ['', [Validators.required, Validators.minLength(3), Validators.pattern(/^[a-zA-Z\s]+/)]],
-    email: ['', [Validators.required, Validators.pattern(/\w+@\w+.\w+/), Validators.maxLength(30)]],
-    numero :['', Validators.pattern(/^[0-9][1-9][0-9]{8}/)],
-    password: ['', Validators.minLength(3)],
-    isWhatsapp : [false]
-  })
+  ngOnInit(): void {
+    this.registationForm =  this.formBuilder.group(
+      {
+      nom : [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.pattern(/^[a-zA-Z\s]+/)
+        ]
+      ],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/\w+@\w+.\w+/),
+          Validators.maxLength(30)
+        ]
+      ],
+      numero :[
+        '',
+        Validators.pattern(/^[0-9][1-9][0-9]{8}/)
+      ],
+      password: [
+        '',
+        Validators.minLength(3)
+      ],
+      isWhatsapp : [false]
+    }
+    )
+  }
+
+
 
   messageEnregistrementOk = "Enregistrement effectué avec succès";
   messageErreurEnregistrement = "Erreur lors de l'inscription, Email déjà utilisée";
-
-  constructor(public authService: AuthService, private formBuilder : FormBuilder, public notifService : NotificationService, public router : Router){}
 
   enregistrementUtilisateur(){
     if (this.registationForm.valid){
@@ -42,8 +68,6 @@ export class RegistrationComponent {
       this.authService.register(this.userInformations).subscribe( {
         next : data =>{
           console.log(data)
-          this.isRegisterOK = true;
-          this.enregistrementOK();
           this.router.navigateByUrl("login");
           this.notifService.showNotifForXSeconds(this.messageEnregistrementOk,5);
         },
@@ -52,7 +76,6 @@ export class RegistrationComponent {
           console.log(err);
           this.notifService.showNotifForXSeconds(this.messageErreurEnregistrement,6);
           console.log(this.errorMessage);
-          this.isRegisterOK = false;
         }
       });
 
@@ -66,14 +89,5 @@ export class RegistrationComponent {
   get numeroControl() { return this.registationForm.get('numero')}
 
   get passwordControl() {return this.registationForm.get('password')}
-
-  enregistrementOK() : void{
-    this.isRegisterOK = true;
-    setTimeout(
-      () => {
-        this.isRegisterOK = false
-      },5000
-    );
-  }
 
 }

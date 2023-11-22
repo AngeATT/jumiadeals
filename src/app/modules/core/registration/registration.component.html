@@ -1,5 +1,4 @@
 <br>
-<div *ngIf="isRegisterOK" class="conteneur-auth confirmation-succes">Compte enregistré avec succès</div>
 <ul class="paragraphes">
     <li>
         <p><b>Un</b> compte. <b>Tous</b> les services</p>
@@ -17,15 +16,21 @@
         <li>
             <h2>Pas encore membre ? <br>Inscrivez-vous gratuitement !</h2>
         </li>
-        <li><span style="color: rgb(26, 151, 223);">En 30 secondes</span> avec une adresse mail</li>
-        <form [formGroup]="registationForm" (ngSubmit)="enregistrementUtilisateur()">
+        <li>
+          <span style="color: rgb(26, 151, 223);">En 30 secondes</span> avec une adresse mail
+        </li>
+        <form [formGroup]="registationForm"
+        (ngSubmit)="enregistrementUtilisateur()">
             <ul id="form-connexion">
-                <li><input formControlName="nom" placeholder="Nom complet" class="input-auth" type="text"
-                        name="fullname" [class.errorStyle]="nomControl!.touched && nomControl!.invalid">
-                    <div *ngIf="nomControl!.touched && nomControl!.invalid" class="errorMsg"> Noms & prénoms invalide veuillez vérifier
-                        votre saisie </div>
+                <li>
+                  <input formControlName="nom" placeholder="Nom complet" class="input-auth" type="text" name="fullname"
+                  [class.errorStyle]="nomControl!.touched && nomControl!.invalid">
+                    <div *ngIf="nomControl!.touched && nomControl!.invalid && nomControl!.disable" class="errorMsg">
+                      Noms & prénoms invalide veuillez vérifier
+                      votre saisie </div>
                 </li>
-                <li><input formControlName="email" placeholder="Email :" class="input-auth" type="email" name="email"
+                <li>
+                  <input formControlName="email" placeholder="Email :" class="input-auth" type="email" name="email"
                         [class.errorStyle]="emailControl!.touched && emailControl!.invalid">
                     <div *ngIf="emailControl!.touched && emailControl!.invalid" class="errorMsg"> Email invalide
                     </div>

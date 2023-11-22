@@ -2,10 +2,9 @@
 
 html, body { height: 100%;
     min-width: 990px;
-    
  }
 
-body { 
+body {
     margin: 0;
      font-family: 1.4em/1.571em "Helvetica Neue",Roboto,Helvetica,Arial,sans-serif;
      min-width: 970px;
@@ -25,4 +24,8 @@ body {
 
 .boxSize{
     min-width: 970px;
+}
+.page{
+    width: 970px;
+    margin: 0 auto;
 }

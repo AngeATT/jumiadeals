@@ -19,7 +19,7 @@ const routes : Routes = [
       path: "creer-annonce",
       component: CreerAnnonceComponent
     },{
-      path : "/activate/{%s}",
+      path : "activate/{%s}",
       component : ValiderInscriptionComponent
     }
 ];
