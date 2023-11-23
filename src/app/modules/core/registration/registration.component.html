@@ -1,61 +1,134 @@
-<br>
+<br />
 <ul class="paragraphes">
-    <li>
-        <p><b>Un</b> compte. <b>Tous</b> les services</p>
-    </li>
-    <li>Désormais, avec un seul compte, vous pouvez vous connecter à tous ces services :</li>
-    <li>
-        <p>
-            <img src="../../../../assets/img-jumia&Food.PNG" alt="">
-        </p>
-    </li>
-    <li></li>
+  <li>
+    <p><b>Un</b> compte. <b>Tous</b> les services</p>
+  </li>
+  <li>
+    Désormais, avec un seul compte, vous pouvez vous connecter à tous ces
+    services :
+  </li>
+  <li>
+    <p>
+      <img src="../../../../assets/img-jumia&Food.PNG" alt="" />
+    </p>
+  </li>
+  <li></li>
 </ul>
 <div id="box-inscription" class="box-formulaire">
-    <ul id="form-connexion">
+  <ul id="form-connexion">
+    <li>
+      <h2>Pas encore membre ? <br />Inscrivez-vous gratuitement !</h2>
+    </li>
+    <li>
+      <span style="color: rgb(26, 151, 223)">En 30 secondes</span> avec une
+      adresse mail
+    </li>
+    <form
+      [formGroup]="registationForm"
+    >
+      <ul id="form-connexion">
         <li>
-            <h2>Pas encore membre ? <br>Inscrivez-vous gratuitement !</h2>
+          <input
+            formControlName="nom"
+            placeholder="Nom complet"
+            class="input-auth"
+            type="text"
+            name="fullname"
+            [class.errorStyle]="nomControl!.touched && nomControl!.invalid"
+          />
+          <div
+            *ngIf="
+              nomControl!.touched && nomControl!.invalid && nomControl!.disable
+            "
+            class="errorMsg"
+          >
+            Noms & prénoms invalide veuillez vérifier votre saisie
+          </div>
         </li>
         <li>
-          <span style="color: rgb(26, 151, 223);">En 30 secondes</span> avec une adresse mail
+          <input
+            formControlName="email"
+            placeholder="Email :"
+            class="input-auth"
+            type="email"
+            name="email"
+            [class.errorStyle]="emailControl!.touched && emailControl!.invalid"
+          />
+          <div
+            *ngIf="emailControl!.touched && emailControl!.invalid"
+            class="errorMsg"
+          >
+            Email invalide
+          </div>
         </li>
-        <form [formGroup]="registationForm"
-        (ngSubmit)="enregistrementUtilisateur()">
-            <ul id="form-connexion">
-                <li>
-                  <input formControlName="nom" placeholder="Nom complet" class="input-auth" type="text" name="fullname"
-                  [class.errorStyle]="nomControl!.touched && nomControl!.invalid">
-                    <div *ngIf="nomControl!.touched && nomControl!.invalid && nomControl!.disable" class="errorMsg">
-                      Noms & prénoms invalide veuillez vérifier
-                      votre saisie </div>
-                </li>
-                <li>
-                  <input formControlName="email" placeholder="Email :" class="input-auth" type="email" name="email"
-                        [class.errorStyle]="emailControl!.touched && emailControl!.invalid">
-                    <div *ngIf="emailControl!.touched && emailControl!.invalid" class="errorMsg"> Email invalide
-                    </div>
-                </li>
-                <li><input formControlName="numero" placeholder="Numero de téléphone principal" class="input-auth"
-                        name="numero" [class.errorStyle]="numeroControl!.touched && numeroControl!.invalid">
-                    <div *ngIf="numeroControl!.touched && numeroControl!.invalid" class="errorMsg"> Numéro invalide
-                    </div>
-                </li>
-                <div id="whatsapp-span"><input type="checkbox" id="checkbox" formControlName="isWhatsapp">Fonctionne
-                    avec Whatsapp</div>
-
-                <li><input formControlName="password" class="input-auth" type="password" placeholder="Mot de passe"
-                        name="password"></li>
-                <input class="input-auth" id="submit-auth" type="submit" value="S'inscrire gratuitement">
-            </ul>
-        </form>
-        <hr>
-        <div style="text-align: center;">
-            <div style="margin-top: 15px;">
-                <li><span style="color: rgb(26, 151, 223);">En 2 secondes </span>avec Facebook</li>
-                <br>
-                <input id="facebook-link" class="input-auth" type="submit" value="S'enregistrer avec Facebook">
-            </div>
+        <li>
+          <input
+            formControlName="numero"
+            placeholder="Numero de téléphone principal"
+            class="input-auth"
+            name="numero"
+            [class.errorStyle]="
+              numeroControl!.touched && numeroControl!.invalid
+            "
+          />
+          <div
+            *ngIf="numeroControl!.touched && numeroControl!.invalid"
+            class="errorMsg"
+          >
+            Numéro de téléphone invalide
+          </div>
+        </li>
+        <div id="whatsapp-span">
+          <input
+            type="checkbox"
+            id="checkbox"
+            formControlName="isWhatsapp"
+          />Fonctionne avec Whatsapp
         </div>
-    </ul>
+
+        <li>
+          <input
+            formControlName="password"
+            class="input-auth"
+            type="password"
+            placeholder="Mot de passe"
+            name="password"
+            [class.errorStyle]="
+            passwordControl!.touched && passwordControl!.invalid
+            "
+          />
+          <div
+            *ngIf="passwordControl!.touched && passwordControl!.invalid"
+            class="errorMsg"
+          >
+            Le mot de passe est requis et doit faire au moins 6 caractères.
+          </div>
+        </li>
+        <button
+          class="input-auth"
+          id="submit-auth"
+          (click)="enregistrementUtilisateur()"
+        >S'inscrire gratuitement</button>
+      </ul>
+    </form>
+    <hr />
+    <div style="text-align: center">
+      <div style="margin-top: 15px">
+        <li>
+          <span style="color: rgb(26, 151, 223)">En 2 secondes </span>avec
+          Facebook
+        </li>
+        <br />
+        <input
+          id="facebook-link"
+          class="input-auth"
+          type="submit"
+          value="S'enregistrer avec Facebook"
+        />
+      </div>
+    </div>
+  </ul>
 </div>
-<div id="div-connexion">Déjà inscrit ? <a href="/auth" id="">Connectez-vous maintenant !</a></div>
+<div id="div-connexion">
+  Déjà inscrit ? <a href="/auth" id="">Connectez-vous maintenant !</a>
+</div>

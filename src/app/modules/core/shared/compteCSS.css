@@ -49,7 +49,19 @@
 }
 
 .input-auth {
+    font-family: 'Roboto', sans-serif;
     border: solid;
+    border-width: 1px;
+    border-color: #DDDD;
+    width: 380px;
+    height: 40px;
+    border-radius: 17px;
+    padding-left: 10px;
+    font-size: 0.88rem;
+    transition: 0.3s;
+}
+.btn-auth{
+  border: solid;
     border-width: 1px;
     border-color: #DDDD;
     width: 380px;
@@ -65,9 +77,9 @@
     opacity: 1;
 }
 
+
 #submit-auth {
     background-color: #26A715;
-    border-radius: 3px;
     border: solid 1px #26A715;
     border-width: 0;
     color: white;

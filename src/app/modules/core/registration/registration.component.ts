@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RegistrationForm } from './registationForm';
 import { NotificationService } from '../notification-bar/notifcation.service';
 import { Router, RouterLink } from '@angular/router';
@@ -44,7 +44,10 @@ export class RegistrationComponent implements OnInit {
       ],
       password: [
         '',
-        Validators.minLength(3)
+        [
+          Validators.minLength(3),
+          Validators.required
+        ]
       ],
       isWhatsapp : [false]
     }
@@ -52,8 +55,7 @@ export class RegistrationComponent implements OnInit {
   }
 
 
-
-  messageEnregistrementOk = "Enregistrement effectué avec succès";
+  messageEnregistrementOk = "Enregistrement effectué avec succès. Consultez votre mail pour activer votre compte.";
   messageErreurEnregistrement = "Erreur lors de l'inscription, Email déjà utilisée";
 
   enregistrementUtilisateur(){
@@ -67,18 +69,20 @@ export class RegistrationComponent implements OnInit {
       )
       this.authService.register(this.userInformations).subscribe( {
         next : data =>{
-          console.log(data)
+          console.log(data);
           this.router.navigateByUrl("login");
-          this.notifService.showNotifForXSeconds(this.messageEnregistrementOk,5);
+          this.notifService.showNotifForXSeconds(this.messageEnregistrementOk,20,true);
         },
         error : err =>{
           this.errorMessage = err.error;
           console.log(err);
-          this.notifService.showNotifForXSeconds(this.messageErreurEnregistrement,6);
+          this.notifService.showNotifForXSeconds(this.messageErreurEnregistrement,20,false);
           console.log(this.errorMessage);
         }
       });
 
+    }else{
+      this.registationForm.markAllAsTouched();
     }
   }
 

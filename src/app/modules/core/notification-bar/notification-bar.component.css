@@ -1,4 +1,5 @@
-.confirmation-succes{
+.notif{
+    font-size: 1.20rem;
     margin-top: 10px;
     width: 970px;
     height: 50px;
@@ -12,4 +13,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.succes{
+  border-color: black;
+  background-color: #8ecd94;
+  color: white;
+}
+.echec{
+    border-color: rgb(233, 143, 33);
+    background-color: #EBCCD1;
+    color: #B35A59;
 }
