@@ -24,6 +24,7 @@ export class NotificationBarComponent {
       }
     })
   }
-
-
+  getAlertClass() : string{
+    return this.succes ? "success" : "echec";
+  }
 }

@@ -35,7 +35,8 @@ export class AuthComponent {
 
   constructor(private router: Router, private auth: AuthService, private fb: FormBuilder,private notification : NotificationService, private storageService : StorageService) {
   }
-  authenticate(): void {
+  authenticate(event : any): void {
+    console.log(event);
     this.isSubmited = true;
     if (this.utilisateurForm.valid) {
        let userCredentials = new  UserCredentials(this.email,this.password);

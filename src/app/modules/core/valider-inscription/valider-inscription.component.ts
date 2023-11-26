@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthComponent } from '../auth/auth.component';
-import { AuthService } from '../services/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { NotificationService } from '../notification-bar/notifcation.service';
+import { AuthService } from '../services/auth.service';
 
 enum TokenStatus {
-  VALID,
-  INVALID,
-  EXPIRED,
-  SENDING,
-  SENT
+  VALID = 'VALID',
+  INVALID ='INVALID',
+  EXPIRED = "EXPIRED",
+  SENDING = "SENDING",
+  SENT = "SENT"
 }
 
 @Component({
@@ -31,10 +30,11 @@ export class ValiderInscriptionComponent implements OnInit{
     if(this.token){
       this.authService.verifyToken(this.token).subscribe({
         next : (data) =>{
-          this.tokenStatut = data.message as TokenStatus;
+          this.tokenStatut = data as TokenStatus;
         },
         error : (e)=>{
           this.messageErreur = e.error.message;
+          this.tokenStatut = TokenStatus.INVALID;
         }
       });
     }

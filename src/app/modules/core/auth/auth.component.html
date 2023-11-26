@@ -15,7 +15,7 @@
     <li></li>
   </ul>
   <div class="box-formulaire" id="box-connexion">
-    <form [formGroup]="utilisateurForm" (ngSubmit)="authenticate()">
+    <form [formGroup]="utilisateurForm" (ngSubmit)="authenticate($event)">
       <ul id="form-connexion">
         <li>
           <h2>Se connecter</h2>
