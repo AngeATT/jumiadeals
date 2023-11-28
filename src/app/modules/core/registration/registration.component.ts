@@ -49,7 +49,7 @@ export class RegistrationComponent implements OnInit {
           Validators.required
         ]
       ],
-      isWhatsapp : [false]
+      isWhatsapp : []
     }
     )
   }
@@ -64,8 +64,9 @@ export class RegistrationComponent implements OnInit {
       this.userInformations = new RegistrationForm(
         this.nomControl?.value!,
         this.emailControl?.value!,
-        this.numeros,
-        this.passwordControl?.value!
+        this.passwordControl?.value!,
+        this.numeroControl?.value!,
+        this.isWhaControl?.value!
       )
       this.authService.register(this.userInformations).subscribe( {
         next : data =>{
@@ -93,5 +94,7 @@ export class RegistrationComponent implements OnInit {
   get numeroControl() { return this.registationForm.get('numero')}
 
   get passwordControl() {return this.registationForm.get('password')}
+
+  get isWhaControl() {return this.registationForm.get('isWhatsapp')}
 
 }

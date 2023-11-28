@@ -28,7 +28,7 @@ export class RestDataSource implements DataSource {
                 httpOptions)
     }
     /**
-     * Methode pour enregistrer dans la bd mongoDB 
+     * Methode pour enregistrer dans la bd mongoDB
      * @param userInformations
      * @returns
      */
@@ -37,7 +37,8 @@ export class RestDataSource implements DataSource {
             nom: userInformations.nom,
             email: userInformations.email,
             password: userInformations.password,
-            numeros: userInformations.numeros
+            numero: userInformations.numero,
+            estWhatsapp: userInformations.estWhatsapp
         },httpOptions);
     };
 }

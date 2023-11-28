@@ -25,6 +25,7 @@ export class NotificationBarComponent {
     })
   }
   getAlertClass() : string{
+    this.notifService.succes$.subscribe(succes =>{this.succes = succes});
     return this.succes ? "success" : "echec";
   }
 }

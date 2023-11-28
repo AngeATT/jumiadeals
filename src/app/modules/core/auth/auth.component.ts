@@ -47,7 +47,8 @@ export class AuthComponent {
           this.router.navigateByUrl("/dashboard");
         },
         error : rep =>{
-          this.notification.showNotifForXSeconds(this.errorMsg,5,false);
+          console.log(rep)
+          this.notification.showNotifForXSeconds(rep,5,false);
             this.isLoginCorrect = false;
         }
       })
