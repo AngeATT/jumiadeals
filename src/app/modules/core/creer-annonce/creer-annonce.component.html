@@ -1,9 +1,95 @@
-<div class="minwidth contenu">
-  <h1>Publiez votre annonce gratuitement en 2 minutes !</h1>
-  <ul>
-    <li>Catégorie et région</li>
-    <li>Ville *</li>
-    <li>Catégorie *</li>
-  </ul>
+<div class="mt-3 text-sm">
+  <div class="container w-2/3 border shadow-md h-3/5 rounded-md mx-auto my-0">
+    <h1
+      class="text-xl font-bold text-white bg-blue-500 w-2/3 p-1 mt-2 pl-5 z-10 -ml-3 rounded"
+    >
+      Publiez votre annonce gratuitement en 2 minutes !
+    </h1>
 
+    <div class="w-3/4">
+      <div class="flex flex-col p-6 gap-4">
+        <p class="font-bold mb-5">Catégorie et région</p>
+        <div class="grid grid-cols-3 gap-4">
+          <label class="flex items-center" for="ville">Ville*</label>
+          <select class="col-span-2 border h-9 rounded" name="" id="">
+            <option value="test">Test</option>
+          </select>
+          <label class="flex items-center" for="categorie">Categorie</label>
+          <select class="col-span-2 border h-9 rounded" name="" id="">
+            <option value="test">Test</option>
+          </select>
+        </div>
+        <hr />
+        <p class="font-bold mb-5">Détails de l'annonce</p>
+        <div class="grid grid-cols-3 gap-4">
+          <label class="flex items-center" for="titre">Titre*</label>
+          <input type="text pl-1" class="col-span-2 border h-9 rounded pl-2" />
+          <label class="flex items-center" for="description"
+            >Description*</label
+          >
+          <textarea
+            class="col-span-2 border rounded pl-2"
+            name="description"
+            placeholder="Description réelle de votre annonce"
+            cols="50"
+            rows="10"
+          ></textarea>
+          <label class="flex items-center">Prix*</label>
+          <input
+            type="text"
+            class="border w-3/4 pl-1 col-span-2 h-9 rounded"
+            min="0"
+          />
+          <label for="photos" class="flex items-center col-span-1"
+            >Photos</label
+          >
+          <input
+            type="file"
+            name="photos"
+            id="photos"
+            accept="image/*"
+            limit="4"
+            class="border cursor-pointer bg-slate-400"
+          />
+        </div>
+        <hr class="my-1" />
+        <div class="grid grid-cols-3 gap-4">
+          <p class="font-bold mb-5 col-span-3">Vos informations</p>
+          <label for="emailUser" class="flex items-center col-span-1"
+            >Email*</label
+          >
+          <input
+            type="email"
+            class="bg-slate-400 border w-3/4 pl-1 col-span-2 h-9 rounded"
+            id="emailUser"
+            readonly
+          />
+          <label for="nom" class="flex items-center col-span-1"
+            >Nom complet*</label
+          >
+          <input type="text" class="col-span-2 border h-9 rounded" id="nom" />
+          <label for="telephone" class="flex items-center col-span-1"
+            >Telephone* :</label
+          >
+          <input
+            type="text"
+            class="col-span-2 border h-9 rounded"
+            id="telephone"
+            lab
+          />
+          <label for="telephone" class="flex items-center col-span-1"
+            >Numéro est whatsapp* :</label
+          >
+          <input type="checkbox" class="col-span-1 w-5 h-9" />
+          <div class="col-span-3 flex items-center justify-center">
+            <button
+              class="bg-yellow-400 h-9 rounded shadow-md border-0 hover:bg-yellow-600 w-2/3 text-base cursor-pointer"
+            >
+              Créer l'annonce
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
